@@ -51,7 +51,8 @@ plot_var_dist_reduced <-
     responses <- responses[!(is.na(responses[[var]])),]
     ggplot(responses, aes_string(paste("`", as.character(var), "`", sep=""))) +
       geom_bar(aes_string(fill = fill_var)) +
-      ggtitle(var) +
+      ggtitle(rename_based_on_codebook(var,var_codebook,
+                                       "var_code","var_short_text")) +
       theme(axis.title.x=element_blank(),
             axis.text.x=element_blank(),
             axis.ticks.x=element_blank(),
@@ -71,3 +72,8 @@ plot_list <- lapply(colnames(responses)[which(colnames(responses) == "1_official
 cowplot::plot_grid(plotlist = plot_list,
                    nrow = round(sqrt(length(plot_list))) + 1,
                    ncol = round(sqrt(length(plot_list))))
+ggsave("Viz_outputs/instrument_prefs_small_multiples.png", width = 18, height = 8)
+
+# preference clustering ----
+
+
