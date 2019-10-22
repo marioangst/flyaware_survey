@@ -1,50 +1,50 @@
-raw_cols,var_code,question_text
-Response ID,response_id,
-Date Started,start_date,
-Time Started,start_time,
-Time Completed,complete_time,
-Status,status,
-"Thank you very much for your participation. First, we would like to know more about your general opi",expl,
-You are:Du bist:,position,
-"First, we would like to know more about your general opinion on business flights.Zuerst möchten wir ",expl,
-"Do you think that your professional development may suffer if you would refuse to fly?Denkst du, das",professional_dev,Do you think that your professional development may suffer if you would refuse to fly?
-CommentKommentar,comment_professional_dev,
-Did you ever avoid a business flight (e.g. by not attending a meeting or by using a train) due to en,ever_avoid,Did you ever avoid a business flight (e.g. by not attending a meeting or by using a train) due to environmental concerns?
-CommentKommentar_1,comment_ever_avoid,
-"Do you think that your boss expects you to fly?Denkst du, dass dein(e) Vorgesetzte(r) von dir erwart",boss_expects_fly,Do you think that your boss expects you to fly?
-CommentKommentar_2,comment_boss_expects_fly,
-Do you think your credibility suffers if you travel by plane to attend an environmental conference/p,credibility_suffers,Do you think your credibility suffers if you travel by plane to attend an environmental conference/project meeting etc.?
-CommentKommentar_3,comment_credibility_suffers,
-"Do you think that scientists should act as role models in society?Denkst du, dass Wissenschaftler in",scientists_role_models,Do you think that scientists should act as role models in society?
-CommentKommentar_4,comment_scientists_role_models,
-"Should Eawag support you more in avoiding flights?Sollte die Eawag dich mehr dabei unterstützen, Flü",should_eawag_support_flyless,Should Eawag support you more in avoiding flights?
-CommentKommentar_5,comment_should_eawag_support_flyless,
-"In the following, you will find 9 proposed measures to reduce business flights at Eawag. Now we ask ",expl,
-1) Official Statement (Eawag Directive): Eawag officially states that low-carbon transport (e.g. tra,1_official_statement,Official Statement (Eawag Directive): Eawag officially states that low-carbon transport (e.g. train) is preferred over high-carbon transport (e.g. flying) in an Eawag directive.
-CommentKommentar_6,comment_1_official_statement,
-2) Improved Communication of Climate Friendly Mobility: Eawag will inform its staff more actively on,2a_highlight_employees,"Many Eawag employees already show a high awareness of the impact of their mobility behavior. The communications department will highlight Eawag employees who actively reduce their business flights, or avoid them entirely"
-b) Eawag sets up an intranet page on climate friendly mobility. This webpage will provide useful inf,2b_intranet_page,Eawag sets up an intranet page on climate friendly mobility.
-c) Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews. ,2c_appraisal_interviews,Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews.
-CommentKommentar_7,comment_2_improved_communication,
-"3) Improved Data Base on Transport Behavior: The Eawag reporting database, which collects data on co",3_improved_database,"Improved Data Base on Transport Behavior: The Eawag reporting database, which collects data on conference contributions, supervision of students etc., will be extended to collect data on mobility behavior."
-CommentKommentar_8,comment_3_improved_communication,
-4) Internal Competition: Eawag sets up a scheme to motivate departments to reduce their CO2 emission,4a_internal_competition_xmas,Departments with the largest relative reduction of CO2 emissions related to their mobility behavior will be highlighted and awarded (e.g. by a department excursion sponsored by Eawag) every year.
-"b) After having established a database of mobility behavior over three years (see measure 3), all de",4b_internal_reduction,"After having established a database of mobility behavior over three years (see measure 3), all departments are requested to set internal reduction targets"
-CommentKommentar_9,4_comment_internal_competition,
-"5) Video Conferences: Currently, Eawag is improving the video conference equipment. Therefore, video",5a_showcase_videoconf,"Eawag promotes the technology by showcasing it during larger events, such as in Eawag seminars and conferences hosted at Eawag"
-b) Regular trainings on the recently installed video conference equipment will be available for all ,5b_trainings_videoconf,Regular trainings on the recently installed video conference equipment will be available for all staff and will be mandatory for all group leaders
-c) Eawag makes it official policy (see measure 1) that video conferencing is the default choice for ,5c_default_videoconf,Eawag makes it official policy (see measure 1) that video conferencing is the default choice for guests who would otherwise need to fly in for meetings and/or seminars.
-CommentKommentar_10,5_comment_videoconf,
-"6) Compensation of CO2 Emissions from Flying: Currently, CO2 emissions from flying are compensated b",6a_double_compensation,the CO2 compensation fee for all flights will be doubled
-"b) All flights, independent of the funding source, are collected in the reporting database (see meas",6b_compensate_all_flight,"All flights, independent of the funding source, are collected in the reporting database"
-CommentKommentar_11,comment_6_compensation,
-7) Promotion of Train Travels: Train travelling will be supported by: 7) Förderung von Zugreisen: Zu,7a_train_official_policy,"Eawag will recommend and state within the developed directive (see measure 1) that flights to destinations that can be reached within 10 hours by train, or that can be reached using an overnight train option, should be avoided. The journey will be considered as working time. "
-"b) Possible additional costs for train travel compared to flying (e.g. higher ticket price, addition",7b_compensate_train_costs," Possible additional costs for train travel compared to flying (e.g. higher ticket price, additional overnight stays, etc.) will be paid for by Eawag"
-"c) Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30",7c_first_class_train,"Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30% higher than a standard rate ticket) and will be financially supported by Eawag"
-CommentKommentar_12,7_comment_trains,
-8) Restrictions of Overseas Flights: Overseas flights cause by far the largest amount of CO2 emissio,8_limit_longdistance_flights,"Eawag will restrict the number of overseas flights (except for field work): (i) Group Leaders, Department Heads and the Directorate: 1 overseas flight within 2 years(ii) PhD students and Postdocs: 1 overseas flight within PhD / Postdoc project period (iii) Other staff: 1 overseas flight within 4 years (comparable to length of PhD project)"
-CommentKommentar_13,8_comment_limit_longdistance,
-9) Internal Cap on Emissions: A cap on CO2 emissions caused by flying is introduced for the whole of,9a_internal_cap,"Every department gets an annual CO2 emissions budget (e.g. based on the average CO2 emissions patterns from previous years, as collected in the reporting database (see measure 3)), which can be allocated and traded"
-b) The measure could be progressive over time: increasing slowly for the first few years and then mo,9b_progressive_cap,"The measure could be progressive over time: increasing slowly for the first few years and then more quickly later, so that departments can plan ahead, prepare and adjust themselves to the updated regulations"
-CommentKommentar_14,9_comment_internal_cap,
-"Thanks a lot! If you wish you may share here further ideas, comments, thoughts,... Vielen Dank! Wenn",additional_comment,"Thanks a lot! If you wish you may share here further ideas, comments, thoughts,..."
+raw_cols,var_code,var_short_text,question_text
+Response ID,response_id,,
+Date Started,start_date,,
+Time Started,start_time,,
+Time Completed,complete_time,,
+Status,status,,
+"Thank you very much for your participation. First, we would like to know more about your general opi",expl,,
+You are:Du bist:,position,Respondent position,
+"First, we would like to know more about your general opinion on business flights.Zuerst möchten wir ",expl,,
+"Do you think that your professional development may suffer if you would refuse to fly?Denkst du, das",professional_dev,Professional development would suffer,Do you think that your professional development may suffer if you would refuse to fly?
+CommentKommentar,comment_professional_dev,,
+Did you ever avoid a business flight (e.g. by not attending a meeting or by using a train) due to en,ever_avoid,Ever avoid a business flight for environment,Did you ever avoid a business flight (e.g. by not attending a meeting or by using a train) due to environmental concerns?
+CommentKommentar_1,comment_ever_avoid,,
+"Do you think that your boss expects you to fly?Denkst du, dass dein(e) Vorgesetzte(r) von dir erwart",boss_expects_fly,Boss expects me to fly,Do you think that your boss expects you to fly?
+CommentKommentar_2,comment_boss_expects_fly,,
+Do you think your credibility suffers if you travel by plane to attend an environmental conference/p,credibility_suffers,Credibility suffers by flying,Do you think your credibility suffers if you travel by plane to attend an environmental conference/project meeting etc.?
+CommentKommentar_3,comment_credibility_suffers,,
+"Do you think that scientists should act as role models in society?Denkst du, dass Wissenschaftler in",scientists_role_models,Scientists should be role models,Do you think that scientists should act as role models in society?
+CommentKommentar_4,comment_scientists_role_models,,
+"Should Eawag support you more in avoiding flights?Sollte die Eawag dich mehr dabei unterstützen, Flü",should_eawag_support_flyless,Eawag should support flying less,Should Eawag support you more in avoiding flights?
+CommentKommentar_5,comment_should_eawag_support_flyless,,
+"In the following, you will find 9 proposed measures to reduce business flights at Eawag. Now we ask ",expl,,
+1) Official Statement (Eawag Directive): Eawag officially states that low-carbon transport (e.g. tra,1_official_statement,1) Official statement,Official Statement (Eawag Directive): Eawag officially states that low-carbon transport (e.g. train) is preferred over high-carbon transport (e.g. flying) in an Eawag directive.
+CommentKommentar_6,comment_1_official_statement,,
+2) Improved Communication of Climate Friendly Mobility: Eawag will inform its staff more actively on,2a_highlight_employees,2a) Highlight role models,"Many Eawag employees already show a high awareness of the impact of their mobility behavior. The communications department will highlight Eawag employees who actively reduce their business flights, or avoid them entirely"
+b) Eawag sets up an intranet page on climate friendly mobility. This webpage will provide useful inf,2b_intranet_page,2b) Intranet page,Eawag sets up an intranet page on climate friendly mobility.
+c) Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews. ,2c_appraisal_interviews,2c) Integrate in appraisal interviews,Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews.
+CommentKommentar_7,comment_2_improved_communication,,
+"3) Improved Data Base on Transport Behavior: The Eawag reporting database, which collects data on co",3_improved_database,3) Improved database,"Improved Data Base on Transport Behavior: The Eawag reporting database, which collects data on conference contributions, supervision of students etc., will be extended to collect data on mobility behavior."
+CommentKommentar_8,comment_3_improved_communication,,
+4) Internal Competition: Eawag sets up a scheme to motivate departments to reduce their CO2 emission,4a_internal_competition_xmas,"4a) Internal competition, highlight at Xmas",Departments with the largest relative reduction of CO2 emissions related to their mobility behavior will be highlighted and awarded (e.g. by a department excursion sponsored by Eawag) every year.
+"b) After having established a database of mobility behavior over three years (see measure 3), all de",4b_internal_reduction,4b) Internal reduction targets per department,"After having established a database of mobility behavior over three years (see measure 3), all departments are requested to set internal reduction targets"
+CommentKommentar_9,4_comment_internal_competition,,
+"5) Video Conferences: Currently, Eawag is improving the video conference equipment. Therefore, video",5a_showcase_videoconf,5a) Showcase videconferencing,"Eawag promotes the technology by showcasing it during larger events, such as in Eawag seminars and conferences hosted at Eawag"
+b) Regular trainings on the recently installed video conference equipment will be available for all ,5b_trainings_videoconf,5b) Trainings for videoconferencing,Regular trainings on the recently installed video conference equipment will be available for all staff and will be mandatory for all group leaders
+c) Eawag makes it official policy (see measure 1) that video conferencing is the default choice for ,5c_default_videoconf,5c) Default videoconferencing for guests,Eawag makes it official policy (see measure 1) that video conferencing is the default choice for guests who would otherwise need to fly in for meetings and/or seminars.
+CommentKommentar_10,5_comment_videoconf,,
+"6) Compensation of CO2 Emissions from Flying: Currently, CO2 emissions from flying are compensated b",6a_double_compensation,6a) Double CO2 compensation,the CO2 compensation fee for all flights will be doubled
+"b) All flights, independent of the funding source, are collected in the reporting database (see meas",6b_compensate_all_flight,6b) Compensate all flights,"All flights, independent of the funding source, are collected in the reporting database"
+CommentKommentar_11,comment_6_compensation,,
+7) Promotion of Train Travels: Train travelling will be supported by: 7) Förderung von Zugreisen: Zu,7a_train_official_policy,7a) Train as official policy,"Eawag will recommend and state within the developed directive (see measure 1) that flights to destinations that can be reached within 10 hours by train, or that can be reached using an overnight train option, should be avoided. The journey will be considered as working time. "
+"b) Possible additional costs for train travel compared to flying (e.g. higher ticket price, addition",7b_compensate_train_costs,7b) Compensate train costs," Possible additional costs for train travel compared to flying (e.g. higher ticket price, additional overnight stays, etc.) will be paid for by Eawag"
+"c) Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30",7c_first_class_train,7c) Finance first class trains,"Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30% higher than a standard rate ticket) and will be financially supported by Eawag"
+CommentKommentar_12,7_comment_trains,,
+8) Restrictions of Overseas Flights: Overseas flights cause by far the largest amount of CO2 emissio,8_limit_longdistance_flights,8) Limit longdistance flights,"Eawag will restrict the number of overseas flights (except for field work): (i) Group Leaders, Department Heads and the Directorate: 1 overseas flight within 2 years(ii) PhD students and Postdocs: 1 overseas flight within PhD / Postdoc project period (iii) Other staff: 1 overseas flight within 4 years (comparable to length of PhD project)"
+CommentKommentar_13,8_comment_limit_longdistance,,
+9) Internal Cap on Emissions: A cap on CO2 emissions caused by flying is introduced for the whole of,9a_internal_cap,9a) Internal cap,"Every department gets an annual CO2 emissions budget (e.g. based on the average CO2 emissions patterns from previous years, as collected in the reporting database (see measure 3)), which can be allocated and traded"
+b) The measure could be progressive over time: increasing slowly for the first few years and then mo,9b_progressive_cap,9b) Progressive cap,"The measure could be progressive over time: increasing slowly for the first few years and then more quickly later, so that departments can plan ahead, prepare and adjust themselves to the updated regulations"
+CommentKommentar_14,9_comment_internal_cap,,
+"Thanks a lot! If you wish you may share here further ideas, comments, thoughts,... Vielen Dank! Wenn",additional_comment,,"Thanks a lot! If you wish you may share here further ideas, comments, thoughts,..."

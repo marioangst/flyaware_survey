@@ -1,5 +1,9 @@
 
+# setup ----
+
 library(readr)
+library(ggplot2)
+library(GGally)
 
 # load utility function ----
 
@@ -27,5 +31,39 @@ colnames(responses) <-
                                  codebook = var_codebook,
                                  rawvar = "raw_cols",
                                  codevar = "var_code")
+# check
+colnames(responses)
+# remove explanatory text cols
+responses <- responses[,colnames(responses) != "expl"]
+# remove meta info and comment fields
+responses <- responses[,!(colnames(responses) %in% c("response_id",
+                                                   "start_date","start_time",
+                                                   "complete_time"))]
+responses <- responses[,!(grepl("comment",colnames(responses)))]
 
+# get an overview over complete vs incomplete
+table(responses$status)
+# for the moment remove incompletes and associated var
+responses <- responses[responses$status == "Complete", 
+                       colnames(responses) != "status"]
 
+# turn likert statements into factors ----
+factor_likert_statements <- function(var){
+  factor(var,
+         levels = c("Strongly agree / Stimme voll und ganz zu" ,
+                    "Agree / Stimme eher zu",
+                    "Neither agree nor disagree / Weder Zustimmung noch Ablehnung",
+                    "Disagree / Lehne eher ab",
+                    "Strongly disagree / Lehne voll und ganz ab"),
+         labels = c("Strongly agree" ,
+                    "Agree",
+                    "Neither agree nor disagree",
+                    "Disagree",
+                    "Strongly disagree"),
+         ordered = TRUE)
+}
+
+# apply for all likert vars
+responses[,which(colnames(responses) == "1_official_statement") : ncol(responses)] <- 
+  lapply(responses[,which(colnames(responses) == "1_official_statement") : ncol(responses)],
+         factor_likert_statements)
