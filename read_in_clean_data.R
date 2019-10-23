@@ -64,6 +64,6 @@ factor_likert_statements <- function(var){
 }
 
 # apply for all likert vars
-responses[,which(colnames(responses) == "1_official_statement") : ncol(responses)] <- 
-  lapply(responses[,which(colnames(responses) == "1_official_statement") : ncol(responses)],
+responses[,!(colnames(responses) %in% c("position","ever_avoid"))] <- 
+  lapply(responses[,!(colnames(responses) %in% c("position","ever_avoid"))],
          factor_likert_statements)
