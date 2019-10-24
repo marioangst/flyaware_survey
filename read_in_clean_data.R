@@ -2,8 +2,6 @@
 # setup ----
 
 library(readr)
-library(ggplot2)
-library(GGally)
 
 # load utility function ----
 
