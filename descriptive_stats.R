@@ -2,8 +2,11 @@
 # setup ----
 
 source("read_in_clean_data.R")
+source("utility_functions.R")
 
 library(plotly)
+library(ggplot2)
+library(GGally)
 
 # first overview stats ----
 
@@ -30,45 +33,6 @@ table(responses$ever_avoid)
 colnames(responses)
 
 responses$`9a_internal_cap`
-
-# the relatively complicated reformating of the variable name is necessary 
-# due to the number in the variable name
-
-plot_var_dist <-
-  function(var, fill_var = "position"){
-    plot_data <- responses
-    ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) +
-      geom_bar(aes_string(fill = fill_var)) + 
-      labs(title=paste(var," distribution"), 
-           subtitle=paste("Colored by ",fill_var)) + 
-      scale_fill_brewer(palette = "Dark2", type = "div") +
-      theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
-  }
-
-# test
-plot_var_dist(colnames(responses)[8])
-
-# for small multiples
-plot_var_dist_reduced <-
-  function(var, fill_var = "position"){
-    # remove NAs
-    plot_data <- responses[!(is.na(responses[[var]])),]
-    ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) +
-      geom_bar(aes_string(fill = fill_var)) +
-      ggtitle(rename_based_on_codebook(var,var_codebook,
-                                       "var_code","var_short_text")) +
-      scale_fill_brewer(palette = "Dark2", type = "div") +
-      theme(axis.title.x=element_blank(),
-            axis.text.x=element_blank(),
-            axis.ticks.x=element_blank(),
-            axis.title.y=element_blank(),
-            axis.text.y=element_blank(),
-            axis.ticks.y=element_blank(),
-            legend.position = "none")
-  }
-# test
-plot_var_dist_reduced(colnames(responses)[13])
-table(responses$`5a_showcase_videoconf`)
 
 # small multiples for instrument preferences
 plot_list_instruments <- lapply(colnames(responses)[which(colnames(responses) == "1_official_statement") : ncol(responses)],
