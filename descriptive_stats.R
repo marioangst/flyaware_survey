@@ -41,6 +41,7 @@ plot_var_dist <-
       geom_bar(aes_string(fill = fill_var)) + 
       labs(title=paste(var," distribution"), 
            subtitle=paste("Colored by ",fill_var)) + 
+      scale_fill_brewer(palette = "Dark2", type = "div") +
       theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
   }
 
@@ -56,6 +57,7 @@ plot_var_dist_reduced <-
       geom_bar(aes_string(fill = fill_var)) +
       ggtitle(rename_based_on_codebook(var,var_codebook,
                                        "var_code","var_short_text")) +
+      scale_fill_brewer(palette = "Dark2", type = "div") +
       theme(axis.title.x=element_blank(),
             axis.text.x=element_blank(),
             axis.ticks.x=element_blank(),
