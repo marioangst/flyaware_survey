@@ -37,6 +37,7 @@ responses <- responses[,colnames(responses) != "expl"]
 responses <- responses[,!(colnames(responses) %in% c("response_id",
                                                    "start_date","start_time",
                                                    "complete_time"))]
+responses_with_comments <- responses
 responses <- responses[,!(grepl("comment",colnames(responses)))]
 
 # get an overview over complete vs incomplete
@@ -44,6 +45,8 @@ table(responses$status)
 # for the moment remove incompletes and associated var
 responses <- responses[responses$status == "Complete", 
                        colnames(responses) != "status"]
+responses_with_comments <- responses_with_comments[responses_with_comments$status == "Complete", 
+                                                  colnames(responses_with_comments) != "status"]
 
 # turn likert statements into factors ----
 factor_likert_statements <- function(var){

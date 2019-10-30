@@ -124,3 +124,19 @@ overall_medians_plot <-
 overall_medians_plot
 
 ggsave("Viz_outputs/overall_medians.png", width = 18, height = 8)
+
+# comments distribution ----
+
+comments <- responses_with_comments[,grepl(pattern = "comment",colnames(responses_with_comments))]
+
+colSums(!(is.na(comments)))
+comments_per_person <- data.frame(ncomments = rowSums(!(is.na(comments))),
+                                  position = responses_with_comments$position)
+
+ggplot(comments_per_person, aes(y = ncomments, x = position, color = position)) +
+  geom_boxplot(alpha = 0.8) + geom_jitter(width = 0.2, height = 0.2, alpha = 0.7) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle=45, vjust=1, hjust = 1)) + 
+  ylab("Number of comments per person")
+
+ggsave("Viz_outputs/comments_distribution.png", width = 12, height = 12)
