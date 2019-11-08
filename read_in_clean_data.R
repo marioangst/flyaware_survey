@@ -48,21 +48,6 @@ responses <- responses[responses$status == "Complete",
 responses_with_comments <- responses_with_comments[responses_with_comments$status == "Complete", 
                                                   colnames(responses_with_comments) != "status"]
 
-# turn likert statements into factors ----
-factor_likert_statements <- function(var){
-  factor(var,
-         levels = c("Strongly agree / Stimme voll und ganz zu" ,
-                    "Agree / Stimme eher zu",
-                    "Neither agree nor disagree / Weder Zustimmung noch Ablehnung",
-                    "Disagree / Lehne eher ab",
-                    "Strongly disagree / Lehne voll und ganz ab"),
-         labels = c("Strongly agree" ,
-                    "Agree",
-                    "Neither agree nor disagree",
-                    "Disagree",
-                    "Strongly disagree"),
-         ordered = TRUE)
-}
 
 # apply for all likert vars
 responses[,!(colnames(responses) %in% c("position","ever_avoid"))] <- 

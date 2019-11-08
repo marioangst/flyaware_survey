@@ -21,7 +21,7 @@ rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
 # due to the number in the variable name
 
 plot_var_dist <-
-  function(var, fill_var = "position", percentage = FALSE, y_limit){
+  function(var, fill_var = "position", percentage = FALSE, y_limit = NA){
     plot_data <- responses
     p <- 
       ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
@@ -64,3 +64,19 @@ plot_var_dist_reduced <-
 # test
 # plot_var_dist_reduced(colnames(responses)[13])
 # table(responses$`5a_showcase_videoconf`)
+
+# turn likert statements into factors ----
+factor_likert_statements <- function(var){
+  factor(var,
+         levels = c("Strongly agree / Stimme voll und ganz zu" ,
+                    "Agree / Stimme eher zu",
+                    "Neither agree nor disagree / Weder Zustimmung noch Ablehnung",
+                    "Disagree / Lehne eher ab",
+                    "Strongly disagree / Lehne voll und ganz ab"),
+         labels = c("Strongly agree" ,
+                    "Agree",
+                    "Neither agree nor disagree",
+                    "Disagree",
+                    "Strongly disagree"),
+         ordered = TRUE)
+}
