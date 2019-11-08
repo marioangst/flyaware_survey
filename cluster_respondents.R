@@ -76,7 +76,7 @@ table(responses$cluster, responses$position)
 # smby_cluster multiples for instrument preferences
 plot_list_by_cluster <- lapply(colnames(responses)[!(colnames(responses) %in% 
                                                        c("position","cluster","ever_avoid"))],
-                        plot_var_dist_reduced, fill_var = "cluster")
+                        plot_var_dist_reduced, fill_var = "cluster", y_limit = max_n)
 
 plots_by_cluster <- 
   cowplot::plot_grid(plotlist = plot_list_by_cluster,

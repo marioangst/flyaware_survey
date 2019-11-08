@@ -14,8 +14,10 @@ library(GGally)
 
 na_dist <- data.frame(var = colnames(responses),
                       na_count = colSums(is.na(responses)))
+na_dist$var <- rename_based_on_codebook(na_dist$var, var_codebook,
+                                        "var_code","var_short_text")
 
-ggplot(na_dist,aes(x = var, y = na_count)) +
+na_dist_plot <- ggplot(na_dist,aes(x = var, y = na_count)) +
   geom_point() +
   geom_segment(aes(x=var, 
                    xend=var, 
@@ -24,6 +26,9 @@ ggplot(na_dist,aes(x = var, y = na_count)) +
   labs(title="NA distribution", 
        subtitle="Missing answers among variable") + 
   theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
+
+na_dist_plot
+
 ggsave("Viz_outputs/na_dist.png")
 
 table(responses$position)
@@ -35,10 +40,13 @@ colnames(responses)
 responses$`9a_internal_cap`
 
 # small multiples for instrument preferences
-plot_list_instruments <- lapply(colnames(responses)[which(colnames(responses) == "1_official_statement") : ncol(responses)],
-                    plot_var_dist_reduced)
 
-position_plot <- lapply("position",plot_var_dist)
+plot_list_instruments <- lapply(colnames(responses)[which(colnames(responses) == "1_official_statement") : 
+                                                      ncol(responses)],
+                                plot_var_dist_reduced,
+                                y_limit = max_n)
+
+position_plot <- lapply("position",plot_var_dist, y_limit = NA)
 
 color_legend <- cowplot::get_legend(position_plot[[1]] + 
                                       guides(color = guide_legend(nrow = 1)) +
@@ -54,7 +62,7 @@ ggsave("Viz_outputs/instrument_prefs_small_multiples.png", width = 18, height = 
 # small multiples of all vars (except ever avoid)
 
 plot_list_all <- lapply(colnames(responses)[!(colnames(responses) %in% c("ever_avoid"))],
-                          plot_var_dist_reduced)
+                          plot_var_dist_reduced, y_limit = max_n)
 
 plots_all <- 
   cowplot::plot_grid(plotlist = plot_list_all,

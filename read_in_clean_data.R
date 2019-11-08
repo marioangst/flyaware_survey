@@ -68,3 +68,6 @@ factor_likert_statements <- function(var){
 responses[,!(colnames(responses) %in% c("position","ever_avoid"))] <- 
   lapply(responses[,!(colnames(responses) %in% c("position","ever_avoid"))],
          factor_likert_statements)
+
+# compute maximum number of responses in one category in a variable (for viz later)
+max_n <- max(unlist(lapply(responses,function(x) max(table(x)))))

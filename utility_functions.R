@@ -1,3 +1,6 @@
+
+# this script implements a number of functions used in the analysis. their scope is limited to this repository.
+
 rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
   #make sure there is only one coded entry in rawvar for input
   z <- codebook[[as.character(rawvar)]] %in% as.character(input)
@@ -18,13 +21,13 @@ rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
 # due to the number in the variable name
 
 plot_var_dist <-
-  function(var, fill_var = "position", percentage = FALSE){
+  function(var, fill_var = "position", percentage = FALSE, y_limit){
     plot_data <- responses
     p <- 
       ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
                                  fill = fill_var))
     if(percentage == FALSE){
-      p <- p + geom_bar()
+      p <- p + geom_bar() + ylim(0,y_limit)
     }
     if(percentage == TRUE){
       p <- p + geom_bar(position = "fill") + ylab("Percentage")
@@ -41,11 +44,12 @@ plot_var_dist <-
 
 # for small multiples
 plot_var_dist_reduced <-
-  function(var, fill_var = "position"){
+  function(var, fill_var = "position", y_limit){
     # remove NAs
     plot_data <- responses[!(is.na(responses[[var]])),]
     ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) +
       geom_bar(aes_string(fill = fill_var)) +
+      ylim(NA,y_limit) +
       ggtitle(rename_based_on_codebook(var,var_codebook,
                                        "var_code","var_short_text")) +
       scale_fill_brewer(palette = "Dark2", type = "div") +
