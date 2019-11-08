@@ -46,6 +46,34 @@ plot_list_instruments <- lapply(colnames(responses)[which(colnames(responses) ==
                                 plot_var_dist_reduced,
                                 y_limit = max_n)
 
+example_df <- data.frame(var = factor( 
+                           sample(c("Strongly \n agree",
+                                 "Agree",
+                                 "Neither agree \n nor disagree",
+                                 "Disagree",
+                                 "Strongly \n disagree"),
+                                 nrow(responses),
+                                 replace = TRUE),ordered = TRUE, 
+                           levels = c("Strongly \n agree",
+                                      "Agree",
+                                      "Neither agree \n nor disagree",
+                                      "Disagree",
+                                      "Strongly \n disagree")),
+                         position = responses$position)
+
+example_plot  <- 
+  ggplot(example_df, aes(x = var)) + geom_bar(fill = "gray") + ylim(0,max_n) +
+  labs(title=paste("Reading example")) + xlab("") + ylab("") +
+  geom_text(data = data.frame(levels = levels(example_df$var)),
+            mapping =  aes(x = c(1:5)), label = levels(example_df$var), y = 100, angle = 90, size = 2) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        legend.position = "none")
+example_plot
+
+plot_list_instruments[["example"]] <- example_plot
+
 position_plot <- lapply("position",plot_var_dist, y_limit = NA)
 
 color_legend <- cowplot::get_legend(position_plot[[1]] + 
@@ -63,11 +91,14 @@ ggsave("Viz_outputs/instrument_prefs_small_multiples.png", width = 18, height = 
 
 plot_list_all <- lapply(colnames(responses)[!(colnames(responses) %in% c("ever_avoid"))],
                           plot_var_dist_reduced, y_limit = max_n)
+plot_list_all[["example_plot"]] <- example_plot
 
 plots_all <- 
   cowplot::plot_grid(plotlist = plot_list_all,
                      nrow = round(sqrt(length(plot_list_all))),
                      ncol = round(sqrt(length(plot_list_all))))
+
+
 cowplot::plot_grid(plots_all, color_legend, rel_heights = c(5,0.5), ncol = 1)
 
 ggsave("Viz_outputs/all_all_small_multiples.png", width = 18, height = 8)
