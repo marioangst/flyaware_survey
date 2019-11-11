@@ -21,7 +21,9 @@ rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
 # due to the number in the variable name
 
 plot_var_dist <-
-  function(var, fill_var = "position", percentage = FALSE, y_limit = NA){
+  function(var, fill_var = "position", percentage = FALSE, 
+           y_limit = NA, plot_xlabs = TRUE,
+           plot_legend = TRUE){
     plot_data <- responses
     p <- 
       ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
@@ -32,15 +34,29 @@ plot_var_dist <-
     if(percentage == TRUE){
       p <- p + geom_bar(position = "fill") + ylab("Percentage")
     }
-    p +
-      labs(title=paste(var," distribution"), 
-           subtitle=paste("Colored by ",fill_var)) + 
+    p <-  p +
+      labs(title=paste(rename_based_on_codebook(input = var,codebook = var_codebook,
+                                                rawvar = "var_code","var_short_text"),
+                       "distribution of answers"), 
+           subtitle=paste("Colored by",fill_var)) + 
       scale_fill_brewer(palette = "Dark2", type = "div") +
+      ylab("Count") + xlab(" ") +
       theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
+    if (plot_legend == FALSE){
+      p <- p + theme(legend.position = "none")
+    }
+    if (plot_xlabs == FALSE){
+      p <- p +
+        theme(axis.title.x=element_blank(),
+              axis.text.x=element_blank(),
+              axis.ticks.x=element_blank())
+    }
+    p
   }
 
 # test
 # plot_var_dist(colnames(responses)[8])
+# plot_var_dist(colnames(responses)[8], plot_legend = FALSE, plot_xlabs = FALSE)
 
 # for small multiples
 plot_var_dist_reduced <-
@@ -62,7 +78,7 @@ plot_var_dist_reduced <-
             legend.position = "none")
   }
 # test
-# plot_var_dist_reduced(colnames(responses)[13])
+# plot_var_dist_reduced(colnames(responses)[13], y_limit = 150)
 # table(responses$`5a_showcase_videoconf`)
 
 # turn likert statements into factors ----

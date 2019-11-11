@@ -111,6 +111,13 @@ table(measures_df$positions)
 # remove BA students and others to only have largest groups
 measures_df <- measures_df[!(measures_df$positions %in% c("Bachelor / Master Student","Other / Keine der Bezeichnungen trifft zu")),]
 
+# plots of all vars separately
+
+for (var in colnames(responses)){
+  plot_var_dist(var,y_limit = max_n,plot_xlabs = FALSE, plot_legend = TRUE)
+  ggsave(filename = paste("Viz_outputs/per_var_viz/",var,".png"), dpi = 300)
+}
+
 # get medians per group
 get_ordered_median <- function(x){
   x <- x[!(is.na(x))]
