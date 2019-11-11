@@ -7,6 +7,8 @@ source("utility_functions.R")
 library(plotly)
 library(ggplot2)
 library(GGally)
+library(grid)
+library(gridExtra)
 
 # first overview stats ----
 
@@ -79,6 +81,8 @@ position_plot <- lapply("position",plot_var_dist, y_limit = NA)
 color_legend <- cowplot::get_legend(position_plot[[1]] + 
                                       guides(color = guide_legend(nrow = 1)) +
                                       theme(legend.position = "bottom"))
+grid.newpage()
+grid.draw(color_legend)
 
 instruments_plot <-
   cowplot::plot_grid(plotlist = plot_list_instruments,
@@ -98,7 +102,6 @@ plots_all <-
                      nrow = round(sqrt(length(plot_list_all))),
                      ncol = round(sqrt(length(plot_list_all))))
 
-
 cowplot::plot_grid(plots_all, color_legend, rel_heights = c(5,0.5), ncol = 1)
 
 ggsave("Viz_outputs/all_all_small_multiples.png", width = 18, height = 8)
@@ -114,7 +117,7 @@ measures_df <- measures_df[!(measures_df$positions %in% c("Bachelor / Master Stu
 # plots of all vars separately
 
 for (var in colnames(responses)){
-  plot_var_dist(var,y_limit = max_n,plot_xlabs = FALSE, plot_legend = TRUE)
+  plot_var_dist(var,y_limit = max_n,plot_xlabs = FALSE, plot_legend = FALSE)
   ggsave(filename = paste("Viz_outputs/per_var_viz/",var,".png"), dpi = 300)
 }
 
