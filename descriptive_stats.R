@@ -174,6 +174,35 @@ overall_medians_plot
 
 ggsave("Viz_outputs/overall_medians.png", width = 18, height = 8)
 
+
+# medians versus assessment by flyaware group ----
+
+internal_assessment <- read.csv2(file = "Data/internal_assessment_measures.csv")
+
+overall_medians_df$impact <- internal_assessment$impact
+overall_medians_df$cost <- internal_assessment$cost
+overall_medians_df$group <- internal_assessment$group
+
+overall_medians_df$medians_rev <- factor(overall_medians_df$medians, ordered = TRUE, 
+                                         levels = rev(levels(overall_medians_df$medians)))
+
+ggplot(overall_medians_df, aes(x = medians_rev, y = impact, color = group)) +
+  geom_jitter(width = 0.2, height = 0.2, alpha = 0.5, size = overall_medians_df$cost * 15) + 
+  xlab("Median agreement") + ylab("Expected impact") + 
+  ggtitle("Categorization of measures", subtitle = "Size of dots by expected cost") +
+  scale_y_continuous(breaks = c(1,2,3), labels = c("low","medium","high")) +
+  labs(color = "Group") +
+  scale_x_discrete(breaks = c("Neither agree nor disagree", "Agree", "Strongly agree")) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size=12),
+        axis.text.y = element_text(size=12),
+        legend.text = element_text(size=12),
+        legend.title = element_text(size=12),
+        axis.title = element_text(size = 16)) +
+  guides(colour = guide_legend(override.aes = list(size=10)))
+
+ggsave("Viz_outputs/measure_categorization.png", dpi = 300, width = 8, height = 12)
+
 # comments distribution ----
 
 comments <- responses_with_comments[,grepl(pattern = "comment",colnames(responses_with_comments))]
