@@ -63,11 +63,32 @@ example_df <- data.frame(var = factor(
                                       "Strongly \n disagree")),
                          position = responses$position)
 
+reading_example  <- 
+  ggplot(example_df, aes(x = var)) + geom_bar(fill = "gray") + ylim(0,max_n) +
+  labs(title=paste("Reading example")) + xlab("") + ylab("") +
+  geom_text(data = data.frame(levels = levels(example_df$var)),
+            mapping =  aes(x = c(1:5)), 
+            label = levels(example_df$var), y = 100, 
+            angle = 90, size = 10,
+            lineheight = 0.9) +
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank(),
+        axis.text.y=element_text(size = 16),
+        title = element_text(size = 23),
+        legend.position = "none")
+reading_example
+
+ggsave("Viz_outputs/reading_example.png", dpi = 300, width = 13, height = 7)
+
 example_plot  <- 
   ggplot(example_df, aes(x = var)) + geom_bar(fill = "gray") + ylim(0,max_n) +
   labs(title=paste("Reading example")) + xlab("") + ylab("") +
   geom_text(data = data.frame(levels = levels(example_df$var)),
-            mapping =  aes(x = c(1:5)), label = levels(example_df$var), y = 100, angle = 90, size = 2) +
+            mapping =  aes(x = c(1:5)), 
+            label = levels(example_df$var), y = 100, 
+            angle = 90, size = 2,
+            lineheight = 0.9) +
   theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
         axis.ticks.x=element_blank(),
@@ -84,12 +105,16 @@ color_legend <- cowplot::get_legend(position_plot[[1]] +
 grid.newpage()
 grid.draw(color_legend)
 
+ggsave("Viz_outputs/legend.png",plot = grid.draw(color_legend), width = 12, 
+       height = 2, dpi = 300)
+
 instruments_plot <-
   cowplot::plot_grid(plotlist = plot_list_instruments,
                      nrow = round(sqrt(length(plot_list_instruments))) + 1,
                      ncol = round(sqrt(length(plot_list_instruments))))
 cowplot::plot_grid(instruments_plot, color_legend, rel_heights = c(5,0.5), ncol = 1)
-ggsave("Viz_outputs/instrument_prefs_small_multiples.png", width = 18, height = 8)
+
+ggsave("Viz_outputs/instrument_prefs_small_multiples.png", width = 12, height = 9, dpi = 300)
 
 # small multiples of all vars (except ever avoid)
 
@@ -104,7 +129,7 @@ plots_all <-
 
 cowplot::plot_grid(plots_all, color_legend, rel_heights = c(5,0.5), ncol = 1)
 
-ggsave("Viz_outputs/all_all_small_multiples.png", width = 18, height = 8)
+ggsave("Viz_outputs/all_all_small_multiples.png",  width = 12, height = 9, dpi = 300))
 
 # differences between answer distributions among positions ----
 
@@ -175,33 +200,37 @@ overall_medians_plot
 ggsave("Viz_outputs/overall_medians.png", width = 18, height = 8)
 
 
-# medians versus assessment by flyaware group ----
+# assessment by flyaware group ----
 
 internal_assessment <- read.csv2(file = "Data/internal_assessment_measures.csv")
 
 overall_medians_df$impact <- internal_assessment$impact
 overall_medians_df$cost <- internal_assessment$cost
 overall_medians_df$group <- internal_assessment$group
+overall_medians_df$acceptance <- factor(internal_assessment$acceptance,
+                                        levels =  c("high","disputed","very disputed"),
+                                        ordered = TRUE)
 
 overall_medians_df$medians_rev <- factor(overall_medians_df$medians, ordered = TRUE, 
                                          levels = rev(levels(overall_medians_df$medians)))
 
-ggplot(overall_medians_df, aes(x = medians_rev, y = impact, color = group)) +
+ggplot(overall_medians_df, aes(x = acceptance, y = impact, color = group)) +
   geom_jitter(width = 0.2, height = 0.2, alpha = 0.5, size = overall_medians_df$cost * 15) + 
-  xlab("Median agreement") + ylab("Expected impact") + 
+  xlab("Acceptance") + ylab("Expected impact") + 
   ggtitle("Categorization of measures", subtitle = "Size of dots by expected cost") +
   scale_y_continuous(breaks = c(1,2,3), labels = c("low","medium","high")) +
   labs(color = "Group") +
-  scale_x_discrete(breaks = c("Neither agree nor disagree", "Agree", "Strongly agree")) +
+  scale_color_brewer(palette = "Dark2", type = "div") +
   theme_minimal() +
-  theme(axis.text.x = element_text(size=12),
-        axis.text.y = element_text(size=12),
-        legend.text = element_text(size=12),
-        legend.title = element_text(size=12),
-        axis.title = element_text(size = 16)) +
+  theme(axis.text.x = element_text(size=16),
+        axis.text.y = element_text(size=16),
+        legend.text = element_text(size=16),
+        legend.title = element_text(size=16),
+        axis.title = element_text(size = 22),
+        title = element_text(size = 26)) +
   guides(colour = guide_legend(override.aes = list(size=10)))
 
-ggsave("Viz_outputs/measure_categorization.png", dpi = 300, width = 8, height = 12)
+ggsave("Viz_outputs/measure_categorization.png", dpi = 300, width = 13, height = 7)
 
 # comments distribution ----
 
