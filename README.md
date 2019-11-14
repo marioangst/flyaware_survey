@@ -8,11 +8,11 @@ A shiny web application to interactively explore the data is available at: https
 
 ### Top level
 
-read_in_clean_data.R: reads in raw data and cleans it for further analysis
-utility_functions.R: higher-level plotting and processing functions used in the scripts
-descriptive_stats.R: generation of descriptive statistics and visualizations
-descriptives_app.R: shiny app to interactively explore data
-cluster_respondents.R: Clustering of respondents based on patterns in answer profiles
+- read_in_clean_data.R: reads in raw data and cleans it for further analysis
+- utility_functions.R: higher-level plotting and processing functions used in the scripts
+- descriptive_stats.R: generation of descriptive statistics and visualizations
+ - descriptives_app.R: shiny app to interactively explore data
+- cluster_respondents.R: Clustering of respondents based on patterns in answer profiles
 
 ### /Data
 
