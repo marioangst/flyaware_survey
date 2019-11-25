@@ -97,13 +97,11 @@ plot_var_dist <-
   }
 
 # test
-# plot_var_dist(colnames(responses)[8])
 # plot_var_dist(colnames(responses)[15])
 # plot_var_dist(colnames(responses)[8], plot_legend = FALSE, plot_xlabs = FALSE)
 
 # for small multiples
 plot_var_dist_reduced <-
-  function(var, fill_var = "position", y_limit){
   function(var, fill_var = "position", y_limit, titlesize = 12){
     # remove NAs
     plot_data <- responses[!(is.na(responses[[var]])),]
