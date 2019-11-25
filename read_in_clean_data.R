@@ -56,3 +56,11 @@ responses[,!(colnames(responses) %in% c("position","ever_avoid"))] <-
 
 # compute maximum number of responses in one category in a variable (for viz later)
 max_n <- max(unlist(lapply(responses,function(x) max(table(x)))))
+
+# internal assessment of cost of measures by flyaware group
+
+internal_assessment <- read.csv2(file = "Data/internal_assessment_measures.csv")
+
+internal_assessment$acceptance <- factor(internal_assessment$acceptance,
+                                         levels =  c("high","disputed","very disputed"),
+                                         ordered = TRUE)

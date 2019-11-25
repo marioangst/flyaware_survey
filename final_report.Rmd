@@ -1,26 +1,27 @@
 ---
 title: "Recommended measures to reduce business flights at Eawag"
-subtitle: "Final report to the directorate"
 author: "Flyaware interest group"
 date: "`r Sys.Date()`"
 output:
+  tint::tintPdf:
   tufte::tufte_handout:
     citation_package: natbib
     latex_engine: xelatex
-  tufte::tufte_html:
-    tufte_features: ["fonts"]
-    css: "my_css.css"
+  tint::tintBook:
   tufte::tufte_book:
     citation_package: natbib
     latex_engine: xelatex
-bibliography: skeleton.bib
+  tint::tintHtml: null
+  tufte::tufte_html: default
 link-citations: yes
+subtitle: Final report to the directorate
+bibliography: skeleton.bib
 ---
   
 ```{r setup, include=FALSE}
-library(tufte)
+library(tint)
 # invalidate cache when the tufte version changes
-knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tufte'))
+knitr::opts_chunk$set(tidy = FALSE, cache.extra = packageVersion('tint'))
 options(htmltools.dir.version = FALSE)
 ```
 
@@ -52,19 +53,42 @@ We conducted a survey among all Eawag employees, in which roughly half of all em
 
 The scientific evidence for man-made climate change and its dangers is robust. We believe that you as (environmental) scientists and members of the directorate want to overcome the knowledge – action gap and support change here at Eawag.
 
-# High-acceptance, low-cost measures
+## Categorization of measures
 
-The following measures are "non-brainers" in our view. The measures are universally supported and do not bring about larger cost in terms of both financial nor personal resources for Eawag. They should be implemented right away.
+We categorized measures based on their acceptance in the survey and their expected impact in terms of reducing GHG emissions. Acceptance was split into three groups, based on the distribution of acceptance among Eawag employees^[However, it needs to be kept in mind that no single measure was rejected by a majority of survey respondents]. Expected impact and expected costs are based on an estimate within the flyaware group and as such only represent an initial prior. We welcome further discussion on these points.
 
-```{r, fig.width = 8, fig.height = 5, fig.cap = "Distribution of agreement to highly accepted measures, colored by respondent position. The figure shows that these measures are overwhelmingly supported.", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
-plot_list_highacc <- lapply(c("1_official_statement",
-                              "2b_intranet_page",
-                              "5a_showcase_videoconf",
-                              "7a_train_official_policy",
-                              "7b_compensate_train_costs"),
-                            plot_var_dist_reduced, titlesize = 11,
-                            y_limit = max_n)
+We suggest to categorize measures into four groups:
 
+- High acceptance: These measures are universally supported by Eawag employees. They are mostly relatively low-cost.
+- Very disputed: The most controversial, yet generally most impactful measures.
+- Disputed, medium impact: Somewhat disputed, medium-impact measures.
+- Disputed, low impact: Somewhat disputed measures with relatively little impact.
+
+```{r, fig.width = 8, fig.height = 5, fig.cap = "Categorization of measures proposed based on acceptance, expected impact and expected cost. Each circle represents a measure, sized by expected costs.", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+library(ggrepel)
+
+pos <- position_jitter(0.2,0.2,seed = 1)
+
+ggplot(internal_assessment, aes(x = acceptance, y = impact, color = group)) +
+  geom_point(position = pos, alpha = 0.5, size = internal_assessment$cost * 5) + 
+  geom_label_repel(position = pos,aes(label = name)) +
+  xlab("Acceptance") + ylab("Expected impact") +
+  scale_y_continuous(breaks = c(1,2,3), labels = c("low","medium","high")) +
+  labs(color = "Group") +
+  scale_color_brewer(palette = "Dark2", type = "div") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(size=12),
+        axis.text.y = element_text(size=12),
+        legend.text = element_text(size=12),
+        legend.title = element_text(size=12),
+        axis.title = element_text(size = 18),
+        title = element_text(size = 18)) +
+  guides(colour = guide_legend(override.aes = list(size=8)))
+```
+
+## High-acceptance, low-cost measures
+
+```{r, fig.margin = TRUE, fig.width=3.5, fig.height=2.5, cache=TRUE, message=FALSE, echo=FALSE}
 example_df <- data.frame(var = factor(
                            sample(c("Strongly \n agree",
                                  "Agree",
@@ -93,28 +117,32 @@ example_plot  <-
         axis.ticks.x=element_blank(),
         legend.position = "none")
 
-plot_list_highacc[["example"]] <- example_plot
-
-position_plot <- lapply("position",plot_var_dist, y_limit = NA)
-
-color_legend <- cowplot::get_legend(position_plot[[1]] +
-                                      guides(color = guide_legend(nrow = 1)) +
-                                      theme(legend.position = "bottom"))
-
-instruments_plot <-
-  cowplot::plot_grid(plotlist = plot_list_highacc,
-                     nrow = 2)
-cowplot::plot_grid(instruments_plot, color_legend, rel_heights = c(5,1), ncol = 1)
+example_plot
 ```
 
+```{r, fig.width = 8, fig.height = 6, fig.cap = "Distribution of agreement to highly accepted measures, colored by respondent position. The figure shows that these measures are overwhelmingly supported.", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+
+plot_inline_grid <- function(var_vec){
+  plot_list <- lapply(var_vec,
+                      plot_var_dist_reduced, 
+                      titlesize = 11, y_limit = max_n, fill_var = "none")
+  cowplot::plot_grid(plotlist = plot_list, ncol = 2)
+}
+plot_inline_grid(c("1_official_statement",
+                   "2b_intranet_page",
+                   "5a_showcase_videoconf",
+                   "7a_train_official_policy",
+                   "7b_compensate_train_costs"))
+```
+
+The following measures are "no-brainers" in our view. The measures are universally supported and do not bring about larger cost in terms of both financial nor personal resources for Eawag. They should be implemented right away.
 
 - *Official Statement (Eawag Directive)*: Eawag officially states that low-carbon transport (e.g. train) is preferred over high-carbon transport (e.g. flying) in an Eawag directive.
 
 - *Intranet page*: Eawag sets up an intranet page on climate friendly mobility. This webpage will provide useful information on:
-
-   (i) International train travel such as on booking platforms (e.g. loco2.com, trainline.com and interrail.eu) that facilitate the booking process of train tickets within Europe
-   (ii) Video conference training (see measure 5)
-   (iii) The compensation system of CO2 emissions from flying at Eawag (see measure 6)
+(i) International train travel such as on booking platforms (e.g. loco2.com, trainline.com and interrail.eu) that facilitate the booking process of train tickets within Europe
+(ii) Video conference training (see measure 5)
+(iii) The compensation system of CO2 emissions from flying at Eawag (see measure 6)
 
 - *Showcasing video conferences*: Eawag promotes the technology by showcasing it during larger events, such as in Eawag seminars and conferences hosted at Eawag.
 
@@ -122,68 +150,83 @@ cowplot::plot_grid(instruments_plot, color_legend, rel_heights = c(5,1), ncol = 
 
 - *Compensation of train travel*: Possible additional costs for train travel compared to flying (e.g. higher ticket price, additional overnight stays, etc.) will be paid for by Eawag e.g. by re-allocating funds received through compensation of flying-related CO2 emissions (see measure 6).
 
-# High-impact measures
+## Somewhat disputed, medium impact
+
+```{r, fig.width = 8, fig.height = 4, fig.cap = "", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+
+plot_inline_grid(c("4b_internal_reduction",
+                   "6a_double_compensation",
+                   "6b_compensate_all_flight"))
+```
 
 
+These measures were somewhat
 
-## Official statement:
+- *Internal reduction targets per department*: After having established a database of mobility behavior over three years (see measure improved database) all departments are requested to set internal reduction targets, e.g. a reduction of 20-50% over the following five years compared to the collected three-year average.
+
+- *Double CO2 compensation*: To further support climate friendly travel options (see measure 7), the CO2 compensation fee for all flights will be doubled.
+
+- *Compensate all flights*: All flights, independent of the funding source, are collected in the reporting database (see measure improved database). Hence, even flights paid for through external funding (e.g. invitations by other research institutes, universities etc.) - which haven’t previously been considered - will also be compensated.
+
+## High-impact measures
+
+```{r, fig.width = 8, fig.height = 4, fig.cap = "", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+
+plot_inline_grid(c("4a_internal_competition_xmas",
+                   "8_limit_longdistance_flights",
+                   "9a_internal_cap",
+                   "9b_progressive_cap"))
+```
 
 
-## Improved communication:
-Improved Communication of Climate Friendly Mobility: Eawag will inform its staff more actively on climate friendly mobility.
-    a. Many Eawag employees already show a high awareness of the impact of their mobility behavior. The communications department will highlight Eawag employees who actively reduce their business flights, or avoid them entirely (e.g. via intranet, poster exhibition, etc.), in order to promote role models and to take away the fear that professional development may suffer by avoiding or reducing business flights.
-    b. Eawag sets up an intranet page on climate friendly mobility. This webpage will provide useful information on:
-(i) International train travel such as on booking platforms (e.g. loco2.com, trainline.com and interrail.eu) that facilitate the booking process of train tickets within Europe
-(ii) Video conference training (see measure 5)
-(iii) The compensation system of CO2 emissions from flying at Eawag (see measure 6)
-    c. Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews. Supervisors and employees will reflect on whether a conference and the resultant business flight(s) are truly necessary to advancing given projects and/or professional development of the employee.
+- *Internal competition, highlight at Xmas*: Results of the mobility behavior collected in the reporting database (see measure improved database) will be presented at the Eawag Christmas party. Departments with the largest relative reduction of CO2 emissions related to their mobility behavior will be highlighted and awarded (e.g. by a department excursion sponsored by Eawag) every year.
 
-## Improved data base:
-Improved Data Base on Transport Behavior: The Eawag reporting database, which collects data on conference contributions, supervision of students etc., will be extended to collect data on mobility behavior. For each international business trip, information on the following will be collected:
-(i) Type of transportation used (flight, train, bus, etc.)
-(ii) Purpose of business trip (conference, project meeting, etc.)
-(iii) Points of departure and arrival
-
-## Internal competition:
-Internal Competition: Eawag sets up a scheme to motivate departments to reduce their CO2 emissions caused by their mobility behavior. The long-term mobility behavior of each department will be documented based on the data collected in the reporting database (see measure 3).
-    a. Results of the mobility behavior collected in the reporting database (see measure 3) will be presented at the Eawag Christmas party. Departments with the largest relative reduction of CO2 emissions related to their mobility behavior will be highlighted and awarded (e.g. by a department excursion sponsored by Eawag) every year.
-    b. After having established a database of mobility behavior over three years (see measure 3) all departments are requested to set internal reduction targets, e.g. a reduction of 20-50% over the following five years compared to the collected three-year average.
-
-## Video conferences:
-Video Conferences: Currently, Eawag is improving the video conference equipment. Therefore, video conferences should be further promoted by:
-
-    b. Regular trainings on the recently installed video conference equipment will be available for all staff and will be mandatory for all group leaders.
-    c. Eawag makes it official policy (see measure 1) that video conferencing is the default choice for guests who would otherwise need to fly in for meetings and/or seminars.
-
-## Compensation of CO2 emissions:
-Compensation of CO2 Emissions from Flying: Currently, CO2 emissions from flying are compensated by CHF 20-200 per flight (depending on flight hours / ticket price). Flights paid by third-party funds are compensated through myclimate. Flights paid for by Eawag or through federal funds, are compensated for by supporting environmentally friendly behavior at Eawag, e.g. by improving bike offers at Eawag, such as parking spaces at Stettbach station and rental bikes.
-    a. To further support climate friendly travel options (see measure 7), the CO2 compensation fee for all flights will be doubled.
-    b. All flights, independent of the funding source, are collected in the reporting database (see measure 3). Hence, even flights paid for through external funding (e.g. invitations by other research institutes, universities etc.) - which haven’t previously been considered - will also be compensated.
-
-## Promotion of train travel:
-Promotion of Train Travel: Train travelling will be supported by:
-    c. Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30% higher than a standard rate ticket) and will be financially supported by Eawag (e.g. by re-allocating funds received through compensations of flying-related CO2 emissions (see measure 6)) .
-
-## Restriction of overseas flights:
-Restrictions of Overseas Flights: Overseas flights cause by far the largest amount of CO2 emissions among Eawag business flights. Therefore, Eawag will restrict the number of overseas flights (except for field work):
+- *Restrictions of Overseas Flights*: Overseas flights cause by far the largest amount of CO2 emissions among Eawag business flights. Therefore, Eawag will restrict the number of overseas flights (except for field work):
 (i) Group Leaders, Department Heads and the Directorate: 1 overseas flight within 2 years
 (ii) PhD students and Postdocs: 1 overseas flight within PhD / Postdoc project period
 (iii) Other staff: 1 overseas flight within 4 years (comparable to length of PhD project)
 
-## Internal cap on emissions:
-Internal Cap on Emissions: A cap on CO2 emissions caused by flying is introduced for the whole of Eawag and will be combined with an internal CO2 emissions trading system.
-    a. Every department gets an annual CO2 emissions budget (e.g. based on the average CO2 emissions patterns from previous years, as collected in the reporting database (see measure 3)), which can be allocated and traded (e.g. in the shape of certificates) among departments and individuals.
-    b. The measure could be progressive over time: increasing slowly for the first few years and then more quickly later, so that departments can plan ahead, prepare and adjust themselves to the updated regulations.
+- *Internal cap*: Every department gets an annual CO2 emissions budget (e.g. based on the average CO2 emissions patterns from previous years, as collected in the reporting database (see measure 3)), which can be allocated and traded (e.g. in the shape of certificates) among departments and individuals.
+
+- *Progressive cap*: The cap could be progressive over time: increasing slowly for the first few years and then more quickly later, so that departments can plan ahead, prepare and adjust themselves to the updated regulations.
+
+## Disputed measures of low impact
+
+
+```{r, fig.width = 8, fig.height = 6, fig.cap = "", warning=FALSE, message=FALSE, cache=TRUE, echo=FALSE}
+
+plot_inline_grid(c("2a_highlight_employees",
+                   "2c_appraisal_interviews",
+                   "3_improved_database",
+                   "5b_trainings_videoconf",
+                   "5c_default_videoconf",
+                   "7c_first_class_train"))
+```
+
+- *Highlight role models*: Many Eawag employees already show a high awareness of the impact of their mobility behavior. The communications department will highlight Eawag employees who actively reduce their business flights, or avoid them entirely (e.g. via intranet, poster exhibition, etc.), in order to promote role models and to take away the fear that professional development may suffer by avoiding or reducing business flights.
+
+- *Integrate in appraisal interviews*: Reflections on climate friendly mobility become a mandatory part of yearly appraisal interviews. Supervisors and employees will reflect on whether a conference and the resultant business flight(s) are truly necessary to advancing given projects and/or professional development of the employee.
+
+- *Improved Data Base*: The Eawag reporting database, which collects data on conference contributions, supervision of students etc., will be extended to collect data on mobility behavior. For each international business trip, information on the following will be collected:
+(i) Type of transportation used (flight, train, bus, etc.)
+(ii) Purpose of business trip (conference, project meeting, etc.)
+(iii) Points of departure and arrival
+
+- *Trainings for videoconferencing*: Regular trainings on the recently installed video conference equipment will be available for all staff and will be mandatory for all group leaders.
+
+- *Default videoconferencing for guests*: Eawag makes it official policy (see measure 1) that video conferencing is the default choice for guests who would otherwise need to fly in for meetings and/or seminars.
+
+- *Finance first class trains*: Moreover, first-class train rides might be considered in certain cases (e.g. ticket price max. 30% higher than a standard rate ticket) and will be financially supported by Eawag (e.g. by re-allocating funds received through compensations of flying-related CO2 emissions (see measure 6)) .
 
 
 
-# Elaboration of the set of measures
+## Elaboration of the set of measures
 
 In June 2019 a case study was performed in the department of environmental chemistry (UCHEM). Goal of this study was to gather information on the flying behavior within the department, e.g. how often did UCHEM fly within one year, where did UCHEM fly to and how much did business flights contribute to the personal CO2 consumption. The mean personal CO2 consumption2 within UCHEM was 9.1 t CO2 equivalents per year (without business flights) and the study revealed that business flights can contribute to up to 60% to the total CO2 consumption per person. As an example, one round-trip from Zurich to Los Angeles (Economy class)causes 5.5 t CO2 equivalents3, highlighting the large impact of especially overseas flights. Climate friendly mobility, e.g. trains, cause CO2 emissions that are ~90%4 lower compared to those emitted by flights and should be preferred whenever possible.
 
 The lack of good quality data on the flying behavior within the departments was often considered as a major drawback (discussions during the Lunchseminar in April 2019) to start reducing CO2 emissions related to business flights. Therefore, we as the Flyaware interest group strongly recommend to improve the data base on mobility behavior at Eawag (see measures below).
 
-# Survey methodology
+## Survey methodology
 
 
 ```{r bib, include=FALSE}

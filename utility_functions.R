@@ -83,8 +83,17 @@ plot_var_dist_reduced <-
   function(var, fill_var = "position", y_limit, titlesize = 12){
     # remove NAs
     plot_data <- responses[!(is.na(responses[[var]])),]
-    ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) +
-      geom_bar(aes_string(fill = fill_var)) +
+    if(fill_var == "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep="")))
+    }
+    if(fill_var != "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
+                                     fill = fill_var))
+    }
+    p +
+      geom_bar() +
       ylim(NA,y_limit) +
       ggtitle(rename_based_on_codebook(var,var_codebook,
                                        "var_code","var_short_text")) +
