@@ -1,4 +1,12 @@
 
+# setup - packages needed for functions
+
+library(plotly)
+library(ggplot2)
+library(GGally)
+library(grid)
+library(gridExtra)
+
 # this script implements a number of functions used in the analysis. their scope is limited to this repository.
 
 rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
@@ -23,23 +31,35 @@ rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
 plot_var_dist <-
   function(var, fill_var = "position", percentage = FALSE, 
            y_limit = NA, plot_xlabs = TRUE,
-           plot_legend = TRUE){
-    plot_data <- responses
-    p <- 
-      ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
-                                 fill = fill_var))
+           plot_legend = TRUE, graph_title = NULL){
+    plot_data <- responses[!(is.na(responses[[var]])),]
+    if(fill_var == "none"){
+      p <- 
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) 
+    }
+    if(fill_var != "none"){
+      p <- 
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
+                                     fill = fill_var))
+    }
     if(percentage == FALSE){
       p <- p + geom_bar() + ylim(0,y_limit)
     }
     if(percentage == TRUE){
       p <- p + geom_bar(position = "fill") + ylab("Percentage")
     }
+    if(!is.null(graph_title)){
+      p <- p +
+        labs(title=graph_title)
+    }
+    if(is.null(graph_title)){
+      p +
+        labs(title=paste(rename_based_on_codebook(input = var,codebook = var_codebook,
+                                                  rawvar = "var_code","var_short_text"),
+                         "distribution of answers"), 
+             subtitle=paste("Colored by",fill_var))
+    }
     p <-  p +
-      labs(title=paste(rename_based_on_codebook(input = var,codebook = var_codebook,
-                                                rawvar = "var_code","var_short_text"),
-                       "distribution of answers"), 
-           subtitle=paste("Colored by",fill_var)) + 
-      scale_fill_brewer(palette = "Dark2", type = "div") +
       ylab("Count") + xlab(" ") +
       theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
     if (plot_legend == FALSE){
