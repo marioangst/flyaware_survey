@@ -137,7 +137,7 @@ ggsave("Viz_outputs/all_all_small_multiples.pdf",  width = 11.6, height = 8, dpi
 # positions
 
 p <- plot_var_dist("position", plot_legend = FALSE)
-p + ggtitle("Respondent position", subtitle = "") +
+p <- p + ggtitle("Respondent position", subtitle = "") +
   scale_x_discrete(labels = c("Admin / IT \n Non-scientific", "BA/MA student", "Senior scientist \n Group leader \n Directorate",
                               "Other","PhD Student", "Postdoc", "Research assistant \n Technician")) +
   theme(axis.text.x = element_text(size=12),
