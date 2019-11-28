@@ -1,4 +1,12 @@
 
+# setup - packages needed for functions
+
+library(plotly)
+library(ggplot2)
+library(GGally)
+library(grid)
+library(gridExtra)
+
 # this script implements a number of functions used in the analysis. their scope is limited to this repository.
 
 rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
@@ -17,35 +25,41 @@ rename_based_on_codebook <- Vectorize(function(input,codebook,rawvar,codevar){
   return(replacement)
 },vectorize.args = c("input"))
 
-# the relatively complicated reformating of the variable name is necessary 
+# the relatively complicated reformating of the variable name is necessary
 # due to the number in the variable name
 
 plot_var_dist <-
-  function(var, fill_var = "position", percentage = FALSE, 
+  function(var, fill_var = "position", percentage = FALSE,
            y_limit = NA, plot_xlabs = TRUE,
-           plot_legend = TRUE, exclude_na = TRUE){
-    if(exclude_na == TRUE){
-      plot_data <- responses[!(is.na(responses[[var]])),]
+           plot_legend = TRUE, graph_title = NULL){
+    plot_data <- responses[!(is.na(responses[[var]])),]
+    if(fill_var == "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep="")))
     }
-    if(exclude_na == FALSE){
-      plot_data <- responses
+    if(fill_var != "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
+                                     fill = fill_var))
     }
-    p <- 
-      ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
-                                 fill = fill_var))
     if(percentage == FALSE){
       p <- p + geom_bar() + ylim(0,y_limit)
     }
     if(percentage == TRUE){
       p <- p + geom_bar(position = "fill") + ylab("Percentage")
     }
+    if(!is.null(graph_title)){
+      p <- p +
+        labs(title=graph_title)
+    }
+    if(is.null(graph_title)){
+      p +
+        labs(title=paste(rename_based_on_codebook(input = var,codebook = var_codebook,
+                                                  rawvar = "var_code","var_short_text"),
+                         "distribution of answers"),
+             subtitle=paste("Colored by",fill_var))
+    }
     p <-  p +
-      labs(title=paste(rename_based_on_codebook(input = var,codebook = var_codebook,
-                                                rawvar = "var_code","var_short_text"),
-                       "distribution of answers"), 
-           subtitle=paste("Colored by",fill_var)) + 
-      scale_fill_brewer(palette = "Dark2", type = "div") +
-      scale_x_discrete(drop = FALSE) +
       ylab("Count") + xlab(" ") +
       theme(axis.text.x = element_text(angle=90, vjust=0.6, hjust = 1))
     if (plot_legend == FALSE){
@@ -69,8 +83,17 @@ plot_var_dist_reduced <-
   function(var, fill_var = "position", y_limit, titlesize = 12){
     # remove NAs
     plot_data <- responses[!(is.na(responses[[var]])),]
-    ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""))) +
-      geom_bar(aes_string(fill = fill_var)) +
+    if(fill_var == "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep="")))
+    }
+    if(fill_var != "none"){
+      p <-
+        ggplot(plot_data, aes_string(paste("`", as.character(var), "`", sep=""),
+                                     fill = fill_var))
+    }
+    p +
+      geom_bar() +
       ylim(NA,y_limit) +
       ggtitle(rename_based_on_codebook(var,var_codebook,
                                        "var_code","var_short_text")) +
@@ -86,6 +109,7 @@ plot_var_dist_reduced <-
             legend.position = "none")
   }
 # test
+# plot_var_dist_reduced(colnames(responses)[13], y_limit = 150)
 # plot_var_dist_reduced(colnames(responses)[15], y_limit = 150)
 # table(responses$`5a_showcase_videoconf`)
 
