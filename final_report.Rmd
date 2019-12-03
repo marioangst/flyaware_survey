@@ -199,7 +199,12 @@ The cap could be progressive over time: increasing slowly for the first few year
 
 ## List of flyaware members
 
-(alphabetisch)
+- Andrea Rösch
+- Jonas Heiberg
+- Karin Kiefer
+- Mario Angst
+- Philipp Staudacher
+
 
 ```{r bib, include=FALSE}
 # create a bib file for the R packages used in this document
