@@ -1,19 +1,19 @@
 group;name;impact;cost;acceptance
 High Acceptance;Official Statement;1;1;high
-High Acceptance;Itranet;1;1;high
-High Acceptance;VC: Showcase;2;1;high
-High Acceptance;Train policy;2;1;high
-High Acceptance;Train cost;2;2;high
-Disputed: Low Impact;Role models;1;1;disputed
-Disputed: Low Impact;Appraisal Interview;1;1;disputed
-Disputed: Low Impact;Database;1;2;disputed
-Disputed: Low Impact;VC: Training;1;1;disputed
-Disputed: Low Impact;VC: Default;1;1;disputed
-Disputed: Low Impact;First class train;1;2;disputed
-Disputed: Medium Impact;Reduction Targets;2;2;disputed
-Disputed: Medium Impact;Double compensation;2;2;disputed
+High Acceptance;Intranet page;1;1;high
+High Acceptance;Showcase video conf;2;1;high
+High Acceptance;Train official policy;2;1;high
+High Acceptance;Compensate train travel;2;2;high
+Disputed: Low Impact;Highlight role models;1;1;disputed
+Disputed: Low Impact;Appraisal interviews;1;1;disputed
+Disputed: Low Impact;Improved database;1;2;disputed
+Disputed: Low Impact;Trainings for videoconf;1;1;disputed
+Disputed: Low Impact;Default videoconf;1;1;disputed
+Disputed: Low Impact;Finance first class trains;1;2;disputed
+Disputed: Medium Impact;Internal reduction targets;2;2;disputed
+Disputed: Medium Impact;Double CO2 compensation;2;2;disputed
 Disputed: Medium Impact;Compensate all flights;2;2;disputed
-Very disputed;Competition;2;1;very disputed
-Very disputed;Limit Longdistance flights;3;2;very disputed
+Very disputed;Internal competition;2;1;very disputed
+Very disputed;Restrict overseas flights;3;2;very disputed
 Very disputed;Internal cap;3;3;very disputed
 Very disputed;Progressive cap;3;3;very disputed
