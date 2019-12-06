@@ -7,7 +7,7 @@ output:
     tufte_variant: "envisioned"
 # css: my_css.css
 link-citations: yes
-subtitle: Final report to the directorate
+subtitle: Report to the directorate
 bibliography: skeleton.bib
 ---
 
@@ -138,7 +138,7 @@ One of the most effective ways to reduce GHG emissions from flying is the reduct
 ## Selection of measures
 
 To select the measures we propose for prioritized implementation we categorized them based on their acceptance among Eawag employees and their expected impact in terms of reducing GHG emissions. Acceptance was split into three groups, based on the distribution of acceptance^[However, it needs to be kept in mind that no single measure was rejected by a majority of survey respondents] among Eawag employees^[The distribution of variables can be explored interactively at: https://marioangst.shinyapps.io/flyaware_survey/ 
-Survey data and analytical procedures can be accessed at https://github.com/marioangst/flyaware_survey]. An overview over all variables can be <a href="Viz_outputs/all_all_small_multiples.pdf">downloaded here.</a>
+Survey data and analytical procedures can be accessed at https://github.com/marioangst/flyaware_survey]. An overview over all variables can be <a href="Viz_outputs/all_all_small_multiples.pdf">downloaded here.</a> The survey allowed for respondents to qualitatively comment on measures. A summary of comments for select measures is provided <a href="static/20191204_qualitative_highlights_flyaware.pdf">here.</a>
 Expected impact and expected costs are based on an estimate within the flyaware group and as such only represent an initial prior. We welcome further discussion on these points.
 
 We suggest to categorize measures into four groups:
@@ -176,11 +176,12 @@ The complete list of measures originally proposed to Eawag employees for evaluat
 
 ## List of flyaware members
 
-- Andrea Rösch
-- Jonas Heiberg
-- Karin Kiefer
-- Mario Angst
-- Philipp Staudacher
+- Mario Angst, Eawag ESS
+- Andri Fritz, Université de Neuchâtel
+- Jonas Heiberg, Eawag ESS
+- Karin Kiefer, Eawag UCHEM
+- Andrea Rösch, Agroscope
+- Philipp Staudacher, Eawag UCHEM
 
 
 ```{r bib, include=FALSE}
