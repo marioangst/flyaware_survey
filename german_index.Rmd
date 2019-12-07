@@ -1,13 +1,13 @@
 ---
 title: "Empfohlene Massnahmen zur Reduktion von Flugreisen an der Eawag"
-author: "Flyaware interest group"
+author: "Interessengruppe FlyAware"
 date: "`r Sys.Date()`"
 output:
   tufte::tufte_html:
     tufte_variant: "envisioned"
 # css: my_css.css
 link-citations: yes
-subtitle: Report to the directorate
+subtitle: Bericht zuhanden der Direktion
 bibliography: skeleton.bib
 ---
 
@@ -18,137 +18,137 @@ source("utility_functions.R")
 
 <a href="index.html">English Version</a>
 
-# A call for action
+# Ein Aufruf zum Handeln
 
-> "It is critical to immediately begin reducing net CO2 emissions and to eliminate them to zero worldwide between 2040 and 2050 at the latest."
+> „Es kommt nun darauf an, die Netto-Emissionen von CO2 und anderen Treibhausgasen schnell zu senken und weltweit spätestens zwischen 2040 und 2050 auf null zu reduzieren.“
+
 >
 > `r tufte::quote_footer('--- Scientists for future')`
 
-This statement from the ‘Scientists for Future’^[https://www.scientists4future.org/statement-en-und-es/]  initiative was signed by 44 out of 87 (50.6%) Eawag group leaders and department heads. The director and deputy director of Eawag have signed this statement as well. Thus, the majority of the Eawag leadership is in agreement with this statement and is aware of the urgency of taking measures to reduce emissions.
+Diese Stellungnahme der „Scientists for Future“^[https://www.scientists4future.org/statement-en-und-es/] -Initiative wurde von 44 der 87 (50.6%) der Eawag-GruppenleiterInnen und AbteilungsleiterInnen unterzeichnet, darunter die Direktorin der Eawag sowie ihr Stellvertreter. Somit stimmt die Mehrheit der Eawag-Führungskräfte dieser Stellungnahme zu und ist sich der Dringlichkeit bewusst, dass Massnahmen ergriffen werden müssen, um die Treibhausgasemissionen zu reduzieren. 
 
-One of the most effective ways for scientific institutions to reduce their climate impact is a drastic reduction of business flights. More than half of greenhouse gas emissions (GHGs) of Eawag's sister institution ETH Zurich are caused by business trips. Of those **93%** are due to business flights ^[https://ethz.ch/flugreisen]. Technical alternatives to substantially reduce GHG emissions of airplanes are not foreseeable for the near future. It is thus of immediate concern to reduce the number of flights.
+Einer der wirksamsten Wege für wissenschaftliche Forschungseinrichtungen die Klimaauswirkungen ihres Handelns zu reduzieren, ist Geschäftsflüge drastisch einzuschränken. Mehr als die Hälfte der Treibhausgasemissionen der ETH Zürich, Eawag’s Schwesterninstitution, wird durch Geschäftsreisen verursacht. Davon gehen 93% auf Flugreisen zurück^[https://ethz.ch/flugreisen]. Mit technischen Alternativen, die die Treibhausgasemissionen von Flugzeugen wesentlich reduzieren, ist in absehbarer Zeit nicht zu rechnen. Folglich ist es dringend notwendig, die Anzahl der Geschäftsflüge zu reduzieren.
 
-Eawag is a research institution recognized worldwide and therefore has the potential to act as a role model for other research institutes by taking on its institutional responsibility for further reducing CO2 emissions. The time to be a rolemodel is now - academia and the world in general is finally waking up to the climate impacts of flying ^[for a helpful FAQ and original 2015 petition of academics worldwide see https://academicflyingblog.wordpress.com/]
+Die Eawag ist ein weltweit hochangesehenes Forschungsinstitut und hat die Möglichkeit als Vorbild für andere Forschungsinstitute zu agieren, indem sie (1) ihre institutionelle Verantwortung wahrnimmt, die CO2-Emissionen weiter zu reduzieren und indem sie (2) das Bewusstsein/die Bereitschaft zeigt, angemessen auf die globale Erderwärmung zu reagieren. Genau jetzt ist die Zeit ein Vorbild zu sein – Hochschulen sowie die breite Öffentlichkeit werden sich endlich der enormen Auswirkungen von Flugreisen bewusst ^[Bezüglich hilfreicher FAQs und der ursprünglichen Aufforderung von Wissenschaftlern aus der ganzen Welt im Jahr 2015 siehe https://academicflyingblog.wordpress.com/].
 
-This report is a call to the Eawag leadership to act. We propose nine concrete sets of measures to reduce Eawag’s CO2 emissions related to business flights. To aid in decision-making, We provide a list of highly accepted and highly impactful measures as priority targets for implementation.
+Dieser Bericht ist eine Aufforderung an die Eawag-Führungskräfte zu handeln. Wir schlagen neun konkrete Massnahmenpakete vor, wie die Eawag ihre CO2-Emissionen hinsichtlich Geschäftsflüge reduzieren kann. Um die Entscheidungsfindung zu unterstützen, stellen wir eine Liste mit hochgradig akzeptierten und wirksamen Massnahmen zur Verfügung, die vorrangig umgesetzt werden sollen. 
 
-```{r fig-margin, fig.margin = TRUE, fig.cap = "Employees of Eawag overwhelmingly support Eawag taking measures to aid in reducing business flights", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE, echo=FALSE}
+```{r fig-margin, fig.margin = TRUE, fig.cap = "Die überwiegende Mehrheit der Eawag-Mitarbeitenden wünscht sich mehr Unterstützung von Seiten der Eawag, um Geschäftsflüge zu vermeiden.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE, echo=FALSE}
 plot_var_dist("should_eawag_support_flyless",y_limit = max_n,plot_xlabs = TRUE, plot_legend = FALSE, fill_var = "none", graph_title = "Eawag should support flying less")
 ```
 
-We conducted a survey among all Eawag employees, in which roughly half of all employees (`r nrow(responses)`) participated. Employees were asked to evaluate the set of measures we present in this report. Given the high response rate, our results are highly likely to adequately reflect the views of Eawag employees on the topic of flying and the proposed measures.
+Wir haben eine Umfrage unter den Eawag-Mitarbeitenden durchgeführt, an der ungefähr die Hälfte aller Eawag-Mitarbeitenden (232) teilgenommen hat. Die Eawag-Mitarbeitenden wurden dazu aufgerufen, die in diesem Bericht vorgestellten Massnahmen zu bewerten. Aufgrund der hohen Teilnehmeranzahl spiegeln die Ergebnisse dieser Umfrage die Sichtweise der Eawag-Mitarbeitenden hinsichtlich der Thematik Fliegen sowie hinsichtlich der vorgeschlagenen Massnahmen wider. 
 
-The scientific evidence for man-made climate change and its dangers is robust. We therefore ask you as (environmental) scientists and members of the directorate to overcome the knowledge – action gap and support change here at Eawag.
+Der vom Menschen verursachte Klimawandel und die daraus resultierenden Gefahren sind umfassend wissenschaftlich belegt. Darum fordern wir Euch als (Umwelt-)Wissenschaftler und Direktionsmitglieder dazu auf, diese knowledge-action Lücke zu überwinden und einen Wandel an der Eawag herbeizuführen bzw. zu unterstützen. 
 
-## What measures should Eawag take?
+## Welche Massnahmen soll die Eawag umsetzen?
 
-We suggest the following list of measures for Eawag to take right away. ^[The complete set of measures as presented to Eawag employees in the survey can be <a href="static/complete_list_measures.pdf">downloaded here</a>]
+Wir schlagen vor, die folgenden Massnahmen umgehend umzusetzen ^[Der vollständige Massnahmenkatalog, der den Eawag-Mitarbeitenden zur Abstimmung vorgelegt wurde, kann hier <a href="static/complete_list_measures.pdf">heruntergeladen werden.</a>].
 
 <details>
-  <summary> <font size="5"> Official Statement (Eawag Directive) </font> </summary>
+  <summary> <font size="5"> Offizielle Erklärung (Eawag Richtlinie)  </font> </summary>
   
-  Eawag officially states that low-carbon transport (e.g. train) is preferred over high-carbon transport (e.g. flying) in an Eawag directive. 
+Die Eawag schreibt offiziell fest, dass Transportoptionen mit niedrigem CO2-Ausstoss (bspw. Zugreisen) gegenüber Transportoptionen mit hohem CO2-Ausstoss (bspw. Flugreisen) vorzuziehen sind.
   
 </details> <p>
 
 <details>
-  <summary> <font size="5"> Intranet page </font> </summary>
+  <summary> <font size="5"> Intranet-Seite </font> </summary>
   
-  Eawag sets up an intranet page on climate friendly mobility. This webpage will provide useful information on:
+Die Eawag erstellt eine Intranet-Seite zum Thema klimafreundliche Mobilität. Diese Website stellt Informationen zur Verfügung hinsichtlich:
+
+  1. Internationale Zugreisen, insbesondere zu Buchungsplattformen (bspw. Loco2.com, trainline.com, interrail.eu), welche den Kauf von Zugtickets in Europa vereinfachen
   
-  1. International train travel such as on booking platforms (e.g. loco2.com, trainline.com and interrail.eu) that facilitate the booking process of train tickets within Europe
+  2. Weiterbildungen für das Abhalten von Videokonferenzen (siehe Massnahme «Förderung von Videokonferenzen») 
   
-  2. Video conference training 
-  
-  3. The compensation system of CO2 emissions from flying at Eawag
+  3. CO2-Kompensation von Flugreisen an der Eawag 
 </details> <p>
 
 <details>
-  <summary> <font size="5"> Showcasing video conferences </font> </summary>
+  <summary> <font size="5"> Förderung von Videokonferenzen </font> </summary>
   
-  Eawag promotes the videoconferencing technology by showcasing it during larger events, such as in Eawag seminars and conferences hosted at Eawag.
-  
-</details> <p>
-
-<details>
-  <summary> <font size="5"> Train travel as official policy </font> </summary>
-  
-  Eawag will recommend and state within the developed directive (see measure official statement) that flights to destinations that can be reached within 10 hours by train, or that can be reached using an overnight train option, should be avoided. The journey will be considered as working time.
+  Die Eawag regt zur Benutzung der Technologie an, indem sie Videokonferenzen an grösseren Veranstaltungen anwendet und hervorhebt, bspw. an Eawag-Seminaren und bei durch die Eawag organisierten Konferenzen.
   
 </details> <p>
 
 <details>
-  <summary> <font size="5"> Compensation of train travel </font> </summary>
+  <summary> <font size="5"> Zugreisen als offizielle Richtlinie </font> </summary>
   
-  Eawag officially states that low-carbon transport (e.g. train) is preferred over high-carbon transport (e.g. flying) in an Eawag directive. 
-  
-</details> <p>
-
-<details>
-  <summary> <font size="5"> Compensate all flights </font> </summary>
-  
-  All flights, independent of the funding source, are collected in the reporting database (see measure improved database). Hence, even flights paid for through external funding (e.g. invitations by other research institutes, universities etc.) - which haven’t previously been considered - will also be compensated.
+  Die Eawag schreibt offiziell fest (siehe Massnahme «Offizielle Erklärung»), dass Flüge vermieden werden sollen, wenn das Reiseziel innerhalb 10 Stunden per Zug oder über Nacht per Nachtzug erreicht werden kann. Die Anreise wird als Arbeitszeit gewertet.
   
 </details> <p>
 
 <details>
-  <summary> <font size="5"> Double CO2 compensation </font> </summary>
+  <summary> <font size="5"> Übernahme von Zusatzkosten verursacht durch Zugreisen </font> </summary>
   
-  To further support climate friendly travel options, the CO2 compensation fee for all flights will be doubled.
-  
-</details> <p>
-
-<details>
-  <summary> <font size="5"> Internal reduction targets </font> </summary>
-  
-  After having established a database of mobility behavior over three years (see measure improved database) all departments are requested to set internal reduction targets, e.g. a reduction of 20-50% over the following five years compared to the collected three-year average.
+  Durch Zugreisen entstehende Zusatzkosten im Vergleich zu Flugreisen (bspw. höhere Ticketkosten oder Zusatzübernachtungen), werden von der Eawag übernommen. Dies geschieht beispielsweise durch Finanzmittel, welche durch erhöhte Kompensationszahlungen auf Flugreisen gewonnen werden (siehe Massnahme «Verdopplung der CO2-Kompensation»). 
   
 </details> <p>
 
 <details>
-  <summary> <font size="5"> Improved database </font> </summary>
+  <summary> <font size="5"> Kompensation aller Flugreisen </font> </summary>
   
-  The Eawag reporting database, which collects data on conference contributions, supervision of students etc., will be extended to collect data on mobility behavior. For each international business trip, information on the following will be collected: 
+  Alle Flüge, unabhängig davon worüber sie finanziert sind, werden im jährlichen Eawag Reporting gelistet (siehe Massnahme «Verbesserte Datengrundlage»). Dies führt dazu, dass auch durch externe Mittel (z.B. Einladungen von anderen Forschungseinrichtungen) bezahlte Flugreisen kompensiert werden können, die bisher unter den Radar gefallen sind.
   
-  1. Type of transportation used (flight, train, bus, etc.) 
+</details> <p>
+
+<details>
+  <summary> <font size="5"> Verdopplung der CO2-Kompensation </font> </summary>
   
-  2. Purpose of business trip (conference, project meeting, etc.) 
+  Um klimafreundliche Mobilität weiter zu fördern (siehe Massnahme «Übernahme von Zusatzkosten verursacht durch Zugreisen), wird die CO2-Kompensation pro Flug verdoppelt.
   
-  3. Points of departure and arrival  
+</details> <p>
+
+<details>
+  <summary> <font size="5"> Interne Reduktionsziele </font> </summary>
+  
+  Nach drei Jahren Datenerhebung (siehe Massnahme «Verbesserte Datengrundlage») sind Abteilungen verpflichtet, sich interne Reduktionsziele zu setzen. Dies kann kann beispielsweise eine Reduktion um 20% bis 50% sein im Verlaufe der folgenden fünf Jahre  verglichen mit dem Durchschnitt der vorhergehenden drei Jahre.
+  
+</details> <p>
+
+<details>
+  <summary> <font size="5"> Verbesserte Datengrundlage </font> </summary>
+  
+  Im jährlichen Reporting der Eawag werden bereits jetzt Daten zu Konferenzbeiträgen, Betreuung von Studenten usw. gesammelt. Diese Daten werden mit Angaben zum Mobilitätsverhalten erweitert. Dabei werden für jede internationale Dienstreise folgende Informationen erhoben: 
+  
+  1. Art des Transportmittels
+  
+  2. Grund der Reise (Konferenz, Projektsitzung, usw.)
+  
+  3. Abreise- und Ankunftsort 
     
 </details> <p>
 
-One of the most effective ways to reduce GHG emissions from flying is the reduction of long-distance flights ^[see eg. Jäckle, S. Eur Polit Sci (2019) 18: 630. https://doi.org/10.1057/s41304-019-00220-6]. Thus, we strongly recommend to prioritize a measure acting on long-distance flights.
+Einer der wirksamsten Wege Treibhausgasemissionen verursacht durch Flugreisen zu reduzieren, ist die Beschränkung von Langstreckenflügen^[siehe bspw. Jäckle, S. Eur Polit Sci (2019) 18: 630. https://doi.org/10.1057/s41304-019-00220-6]. Deshalb empfehlen wir nachdrücklich eine Massnahme miteinzubeziehen, die sich auf Langstreckenflüge auswirkt:
 
 <details>
-  <summary> <font size="5"> Limit longdistance-flights </font> </summary>
+  <summary> <font size="5"> Reduktion von Langstreckenflügen </font> </summary>
   
-  Overseas flights cause by far the largest amount of CO2 emissions among Eawag business flights. Therefore, Eawag will restrict the number of overseas flights (except for field work): 
+  Langstreckenflüge (interkontinentale Flüge) tragen mit Abstand am stärksten zu den durch Flugreisen entstehenden CO2-Emissionen der Eawag bei. Die Eawag schränkt daher die Zahl solcher Flüge ein (ausser für Feldarbeit). 
   
-  1. Group Leaders, Department Heads and the Directorate: 1 overseas flight within 2 years 
+  1. Gruppenleiter, Abteilungsleiter und Direktorat: maximal 1 Langstreckenflug innerhalb von zwei Jahren
   
-  2. PhD students and Postdocs: 1 overseas flight within PhD / Postdoc project period 
+  2. Doktoranden und Postdocs: maximal 1 Langstreckenflug innerhalb des Doktorats bzw. Projektdauer des Postdocs
   
-  3. Other staff: 1 overseas flight within 4 years (comparable to length of PhD project)
+  3. Restliche Angestellte: maximal 1 Langstreckenflug innerhalb von 4 Jahren (vergleichbar mit der durchschnittlichen Dauer eines Doktorats)
   
 </details> <p>
 
 
 
-## Selection of measures
+## Auswahl von Massnahmen zur Umsetzung
 
-To select the measures we propose for prioritized implementation we categorized them based on their acceptance among Eawag employees and their expected impact in terms of reducing GHG emissions. Acceptance was split into three groups, based on the distribution of acceptance^[However, it needs to be kept in mind that no single measure was rejected by a majority of survey respondents] among Eawag employees^[The distribution of variables can be explored interactively at: https://marioangst.shinyapps.io/flyaware_survey/ 
-Survey data and analytical procedures can be accessed at https://github.com/marioangst/flyaware_survey]. An overview over all variables can be <a href="Viz_outputs/all_all_small_multiples.pdf">downloaded here.</a> The survey allowed for respondents to qualitatively comment on measures. A summary of comments for select measures is provided <a href="static/20191204_qualitative_highlights_flyaware.pdf">here.</a>
-Expected impact and expected costs are based on an estimate within the flyaware group and as such only represent an initial prior. We welcome further discussion on these points.
+Um die Massnahmen auszuwählen, die umgehend umgesetzt werden sollen, haben wir diese hinsichtlich ihrer Zustimmung unter den Eawag-Mitarbeitenden,hinsichtlich ihrer zu erwartenden Auswirkung auf die Reduktion von Treibhausgasemissionen sowie hinsichtlich des zu erwartenden (Kosten-)Aufwands klassifiziert. «Zustimmung» wurde in drei Gruppen aufgeteilt. Diese Einteilung beruht auf der Verteilung der Zustimmung^[Allerdings muss berücksichtigt werden, dass keine einzige Massnahme mehrheitlich von den Umfrageteilnehmenden abgelehnt wurde.] unter den Eawag-Mitarbeitenden^[Die Umfrageergebnisse können unter folgendem Link interaktiv erkundet werden:  https://marioangst.shinyapps.io/flyaware_survey/ 
+Informationen zur Auswertung der Umfrage sind unter folgendem Link verfügbar:  https://github.com/marioangst/flyaware_survey]. Eine Übersicht aller Verteilungen kann hier <a href="Viz_outputs/all_all_small_multiples.pdf">heruntergeladen werden</a>. Umfrageteilnehmer hatten die Möglichkeit, qualitative Kommentare zu den einzelnen Massnahmen hinzuzufügen. Eine Zusammenfassung dieser Kommentare hinsichtlich ausgewählter Massnahmen ist <a href="static/20191204_qualitative_highlights_flyaware.pdf">hier verfügbar</a>. Die zu erwartenden Auswirkungen und (Kosten-)Aufwand basieren auf Beurteilungen der FlyAware-Mitglieder und stellen somit nur eine vorläufige Einschätzung dar. Wir begrüssen einen weiteren Austausch hinsichtlich der Priorisierung der Massnahmen.  
 
-We suggest to categorize measures into four groups:
+Wir empfehlen die Massnahmen in vier Gruppen einzuteilen:
 
-- High acceptance: These measures are universally supported by Eawag employees. They are mostly relatively low-cost. We recommend their immediate adoption.
-- Very disputed: The most controversial, yet generally most impactful measures. We recommend to forego these for the moment, except for the measure on limiting long-distance flights, due to its impact and because no other measure acts directly on long-distance flights.
-- Disputed, medium impact: Somewhat disputed, medium-impact measures. We recommend the adoption of these measures.
-- Disputed, low impact: Somewhat disputed measures with relatively little impact. We do recommend not to prioritize these measures, except concerning the adoption of a measure improving the database as it is the foundation for some other measures.
+- Hohe Zustimmung: Diese Massnahmen werden von einer breiten Mehrheit der Eawag-Mitarbeitenden unterstützt. Sie verursachen überwiegend einen geringen (Kosten-)Aufwand (Zeit, Geld,..) bei der Umsetzung. Wir empfehlen diese sofort umzusetzen. 
+- Sehr umstritten: Diese Massnahmen sind sehr umstritten jedoch hochwirksam. Wir empfehlen diese Massnahmen für den Moment zurückzustellen mit Ausnahme der Massnahme, die sich für die Reduktion der Langstreckenflüge einsetzt. Diese Massnahme hat die grösste Wirkung und keine andere Massnahme wirkt sich direkt auf Langstreckenflüge aus. 
+- Umstritten, mittlere Wirksamkeit: Leicht umstrittene, mittelwirksame Massnahmen. Wir empfehlen die Umsetzung dieser Massnahmen.
+- Umstritten, geringe Wirksamkeit. Leicht umstrittene Massnahmen mit relativ geringerer Wirksamkeit. Wir empfehlen diese Massnahmen für den Moment zurückzustellen, mit der Ausnahme, das bestehende Reporting der Eawag hinsichtlich des Mobilitätsverhaltens zu erweitern, da es die Grundlage für weitere Massnahmen bildet. 
 
-```{r, fig.width = 9, fig.height = 5, fig.cap = "Categorization of measures proposed based on acceptance, expected impact and expected cost. Each circle represents a measure, sized by expected costs.", warning=FALSE, message=FALSE, echo=FALSE}
+```{r, fig.width = 9, fig.height = 5, fig.cap = "Kategorisierung der Massnahmen basierend auf Akzeptanz, erwarteter Wirkung, und erwarteten Kosten. Jeder Kreis repräsentiert eine Massnahme, dessen Grösse die erwarteten Kosten der Massnahme.", warning=FALSE, message=FALSE, echo=FALSE}
 library(ggrepel)
 
 pos <- position_jitter(0.2,0.2,seed = 1)
@@ -156,9 +156,9 @@ pos <- position_jitter(0.2,0.2,seed = 1)
 ggplot(internal_assessment, aes(x = acceptance, y = impact, color = group)) +
   geom_point(position = pos, alpha = 0.5, size = internal_assessment$cost * 5) + 
   geom_label_repel(position = pos,aes(label = name)) +
-  xlab("Acceptance") + ylab("Expected impact") +
-  scale_y_continuous(breaks = c(1,2,3), labels = c("low","medium","high")) +
-  labs(color = "Group") +
+  xlab("Akzeptanz") + ylab("Erwartete Wirkung") +
+  scale_y_continuous(breaks = c(1,2,3), labels = c("tief","mittel","hoch")) +
+  labs(color = "Kategorie") +
   scale_color_brewer(palette = "Dark2", type = "div") +
   theme_minimal() +
   theme(axis.text.x = element_text(size=12),
@@ -170,11 +170,11 @@ ggplot(internal_assessment, aes(x = acceptance, y = impact, color = group)) +
   guides(colour = guide_legend(override.aes = list(size=8)))
 ```
 
-### Complete initial List of measures
+### Vollständiger vorgeschlagener Massnahmenkatalog
 
-The complete list of measures originally proposed to Eawag employees for evaluation in the survey conducted by flyaware can be <a href="static/complete_list_measures.pdf">downloaded here</a>. It was elaborated based on gathering a crowd-sourced list of measures first within a core group and then within the extended flyaware group. To gather an initial set of measures, initiatives at other institutions, such as ETH and EPFL were taken into account. We tried to ensure a mix of regulatory, incentive-based and informational measures.
+Der vollständige Massnahmenkatalog, welcher den Eawag-Mitarbeitenden zur Beurteilung innerhalb der FlyAware-Umfrage vorgeschlagen wurde, kann hier heruntergeladen werden. Dieser Katalog wurde zuerst innerhalb des Kernteams und anschliessend innerhalb der erweiterten FlyAware-Gruppe ausgearbeitet. Dazu wurden auch Initiativen anderer Institutionen, wie z.B. der ETH und der EPFL, berücksichtigt. Wir haben versucht, eine Kombination aus regulatorischen, anreizstiftenden sowie informativen Massnahmen zusammenzustellen.
 
-## List of flyaware members
+## Mitglieder des Kernteams FlyAware
 
 - Mario Angst, Eawag ESS
 - Andri Fritz, Université de Neuchâtel
