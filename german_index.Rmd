@@ -27,19 +27,19 @@ source("utility_functions.R")
 
 Diese Stellungnahme der „Scientists for Future“^[https://www.scientists4future.org/statement-en-und-es/] -Initiative wurde von 44 der 87 (50.6%) der Eawag-GruppenleiterInnen und AbteilungsleiterInnen unterzeichnet, darunter die Direktorin der Eawag sowie ihr Stellvertreter. Somit stimmt die Mehrheit der Eawag-Führungskräfte dieser Stellungnahme zu und ist sich der Dringlichkeit bewusst, dass Massnahmen ergriffen werden müssen, um die Treibhausgasemissionen zu reduzieren. 
 
-Einer der wirksamsten Wege für wissenschaftliche Forschungseinrichtungen die Klimaauswirkungen ihres Handelns zu reduzieren, ist Geschäftsflüge drastisch einzuschränken. Mehr als die Hälfte der Treibhausgasemissionen der ETH Zürich, Eawag’s Schwesterninstitution, wird durch Geschäftsreisen verursacht. Davon gehen 93% auf Flugreisen zurück^[https://ethz.ch/flugreisen]. Mit technischen Alternativen, die die Treibhausgasemissionen von Flugzeugen wesentlich reduzieren, ist in absehbarer Zeit nicht zu rechnen. Folglich ist es dringend notwendig, die Anzahl der Geschäftsflüge zu reduzieren.
+Einer der wirksamsten Wege für wissenschaftliche Forschungseinrichtungen die Klimaauswirkungen ihres Handelns zu reduzieren, ist Geschäftsflüge drastisch einzuschränken. Mehr als die Hälfte der Treibhausgasemissionen der ETH Zürich, der Schwesterinstitution der Eawag, wird durch Geschäftsreisen verursacht. Davon gehen 93% auf Flugreisen zurück^[https://ethz.ch/flugreisen]. Mit technischen Alternativen, die die Treibhausgasemissionen von Flugzeugen wesentlich reduzieren, ist in absehbarer Zeit nicht zu rechnen. Folglich ist es dringend notwendig, die Anzahl der Flugreisen zu reduzieren.
 
-Die Eawag ist ein weltweit hochangesehenes Forschungsinstitut und hat die Möglichkeit als Vorbild für andere Forschungsinstitute zu agieren, indem sie (1) ihre institutionelle Verantwortung wahrnimmt, die CO2-Emissionen weiter zu reduzieren und indem sie (2) das Bewusstsein/die Bereitschaft zeigt, angemessen auf die globale Erderwärmung zu reagieren. Genau jetzt ist die Zeit ein Vorbild zu sein – Hochschulen sowie die breite Öffentlichkeit werden sich endlich der enormen Auswirkungen von Flugreisen bewusst ^[Bezüglich hilfreicher FAQs und der ursprünglichen Aufforderung von Wissenschaftlern aus der ganzen Welt im Jahr 2015 siehe https://academicflyingblog.wordpress.com/].
+Die Eawag ist ein weltweit hochangesehenes Forschungsinstitut und hat die Möglichkeit als Vorbild für andere Forschungsinstitute zu agieren, indem sie ihre institutionelle Verantwortung wahrnimmt, die CO2-Emissionen weiter zu reduzieren. Genau jetzt ist die Zeit ein Vorbild zu sein – Hochschulen sowie die breite Öffentlichkeit werden sich endlich der enormen Auswirkungen von Flugreisen bewusst ^[Für oft gestellte Fragen und eine frühe breite Petition von Wissenschaftlern aus der ganzen Welt im Jahr 2015: https://academicflyingblog.wordpress.com/].
 
-Dieser Bericht ist eine Aufforderung an die Eawag-Führungskräfte zu handeln. Wir schlagen neun konkrete Massnahmenpakete vor, wie die Eawag ihre CO2-Emissionen hinsichtlich Geschäftsflüge reduzieren kann. Um die Entscheidungsfindung zu unterstützen, stellen wir eine Liste mit hochgradig akzeptierten und wirksamen Massnahmen zur Verfügung, die vorrangig umgesetzt werden sollen. 
+Dieser Bericht ist eine Aufforderung an die Eawag-Führungskräfte zu handeln. Wir haben neun konkrete Massnahmenpakete ausgearbeitet, wie die Eawag ihre aufgrund von Flugreisen verursachten CO2-Emissionen reduzieren kann. Um die Entscheidungsfindung zu unterstützen, stellen wir eine Liste mit zehn hochgradig akzeptierten und wirksamen Massnahmen zur Verfügung, die vorrangig umgesetzt werden sollen. 
 
 ```{r fig-margin, fig.margin = TRUE, fig.cap = "Die überwiegende Mehrheit der Eawag-Mitarbeitenden wünscht sich mehr Unterstützung von Seiten der Eawag, um Geschäftsflüge zu vermeiden.", fig.width=3.5, fig.height=3.5, cache=TRUE, message=FALSE, echo=FALSE}
 plot_var_dist("should_eawag_support_flyless",y_limit = max_n,plot_xlabs = TRUE, plot_legend = FALSE, fill_var = "none", graph_title = "Eawag should support flying less")
 ```
 
-Wir haben eine Umfrage unter den Eawag-Mitarbeitenden durchgeführt, an der ungefähr die Hälfte aller Eawag-Mitarbeitenden (232) teilgenommen hat. Die Eawag-Mitarbeitenden wurden dazu aufgerufen, die in diesem Bericht vorgestellten Massnahmen zu bewerten. Aufgrund der hohen Teilnehmeranzahl spiegeln die Ergebnisse dieser Umfrage die Sichtweise der Eawag-Mitarbeitenden hinsichtlich der Thematik Fliegen sowie hinsichtlich der vorgeschlagenen Massnahmen wider. 
+Wir haben eine Umfrage unter den Eawag-Mitarbeitenden durchgeführt, an der ungefähr die Hälfte aller Eawag-Mitarbeitenden (232) teilgenommen hat. Die Eawag-Mitarbeitenden wurden dazu aufgerufen, die in diesem Bericht vorgestellten Massnahmen zu bewerten. Aufgrund der hohen Teilnehmeranzahl repräsentieren die Ergebnisse dieser Umfrage mit hoher Wahrscheinlichkeit die Sichtweise der Eawag-Mitarbeitenden hinsichtlich der Thematik Fliegen sowie hinsichtlich der vorgeschlagenen Massnahmen. 
 
-Der vom Menschen verursachte Klimawandel und die daraus resultierenden Gefahren sind umfassend wissenschaftlich belegt. Darum fordern wir Euch als (Umwelt-)Wissenschaftler und Direktionsmitglieder dazu auf, diese knowledge-action Lücke zu überwinden und einen Wandel an der Eawag herbeizuführen bzw. zu unterstützen. 
+Der vom Menschen verursachte Klimawandel und die daraus resultierenden Gefahren sind umfassend wissenschaftlich belegt. Darum fordern wir Euch als (Umwelt-)Wissenschaftler und Direktionsmitglieder dazu auf, die Lücke zwischen Wissen und Handeln zu überwinden und einen Wandel an der Eawag herbeizuführen. 
 
 ## Welche Massnahmen soll die Eawag umsetzen?
 
@@ -124,7 +124,7 @@ Einer der wirksamsten Wege Treibhausgasemissionen verursacht durch Flugreisen zu
 <details>
   <summary> <font size="5"> Reduktion von Langstreckenflügen </font> </summary>
   
-  Langstreckenflüge (interkontinentale Flüge) tragen mit Abstand am stärksten zu den durch Flugreisen entstehenden CO2-Emissionen der Eawag bei. Die Eawag schränkt daher die Zahl solcher Flüge ein (ausser für Feldarbeit). 
+  Langstreckenflüge (interkontinentale Flüge) tragen mit Abstand am stärksten zu den durch Flugreisen entstehenden CO2-Emissionen der Eawag bei. Die Eawag schränkt daher die Zahl solcher Flüge ein (ausser für Feldarbeit).
   
   1. Gruppenleiter, Abteilungsleiter und Direktorat: maximal 1 Langstreckenflug innerhalb von zwei Jahren
   
@@ -138,13 +138,13 @@ Einer der wirksamsten Wege Treibhausgasemissionen verursacht durch Flugreisen zu
 
 ## Auswahl von Massnahmen zur Umsetzung
 
-Um die Massnahmen auszuwählen, die umgehend umgesetzt werden sollen, haben wir diese hinsichtlich ihrer Zustimmung unter den Eawag-Mitarbeitenden,hinsichtlich ihrer zu erwartenden Auswirkung auf die Reduktion von Treibhausgasemissionen sowie hinsichtlich des zu erwartenden (Kosten-)Aufwands klassifiziert. «Zustimmung» wurde in drei Gruppen aufgeteilt. Diese Einteilung beruht auf der Verteilung der Zustimmung^[Allerdings muss berücksichtigt werden, dass keine einzige Massnahme mehrheitlich von den Umfrageteilnehmenden abgelehnt wurde.] unter den Eawag-Mitarbeitenden^[Die Umfrageergebnisse können unter folgendem Link interaktiv erkundet werden:  https://marioangst.shinyapps.io/flyaware_survey/ 
-Informationen zur Auswertung der Umfrage sind unter folgendem Link verfügbar:  https://github.com/marioangst/flyaware_survey]. Eine Übersicht aller Verteilungen kann hier <a href="Viz_outputs/all_all_small_multiples.pdf">heruntergeladen werden</a>. Umfrageteilnehmer hatten die Möglichkeit, qualitative Kommentare zu den einzelnen Massnahmen hinzuzufügen. Eine Zusammenfassung dieser Kommentare hinsichtlich ausgewählter Massnahmen ist <a href="static/20191204_qualitative_highlights_flyaware.pdf">hier verfügbar</a>. Die zu erwartenden Auswirkungen und (Kosten-)Aufwand basieren auf Beurteilungen der FlyAware-Mitglieder und stellen somit nur eine vorläufige Einschätzung dar. Wir begrüssen einen weiteren Austausch hinsichtlich der Priorisierung der Massnahmen.  
+Um die Massnahmen auszuwählen, die umgehend umgesetzt werden sollen, haben wir diese hinsichtlich ihrer Akzeptenz unter den Eawag-Mitarbeitenden,hinsichtlich ihrer zu erwartenden Auswirkung auf die Reduktion von Treibhausgasemissionen sowie hinsichtlich des zu erwartenden Aufwands (finanzielle Kosten und Arbeitszeit) klassifiziert. Die Akzeptanz der Massnahmen wurde in drei Gruppen aufgeteilt. Diese Einteilung beruht für jede Massnahme auf die Verteilung der Zustimmung^[Allerdings muss berücksichtigt werden, dass keine einzige Massnahme mehrheitlich von den Umfrageteilnehmenden abgelehnt wurde.] unter den Eawag-Mitarbeitenden^[Die Umfrageergebnisse können unter folgendem Link interaktiv erkundet werden:  https://marioangst.shinyapps.io/flyaware_survey/ 
+Informationen zur Auswertung der Umfrage sind unter folgendem Link verfügbar:  https://github.com/marioangst/flyaware_survey]. Eine Übersicht aller Verteilungen kann hier <a href="Viz_outputs/all_all_small_multiples.pdf">heruntergeladen werden</a>. Umfrageteilnehmer hatten die Möglichkeit, qualitative Kommentare zu den einzelnen Massnahmen hinzuzufügen. Eine Zusammenfassung dieser Kommentare hinsichtlich ausgewählter Massnahmen ist <a href="static/20191204_qualitative_highlights_flyaware.pdf">hier verfügbar</a>. Die zu erwartenden Auswirkungen und Kosten basieren auf Beurteilungen der FlyAware-Mitglieder und stellen somit nur eine vorläufige Einschätzung dar. Wir begrüssen einen weiteren Austausch hinsichtlich der Priorisierung der Massnahmen.  
 
-Wir empfehlen die Massnahmen in vier Gruppen einzuteilen:
+Wir empfehlen, die Massnahmen in vier Gruppen einzuteilen:
 
-- Hohe Zustimmung: Diese Massnahmen werden von einer breiten Mehrheit der Eawag-Mitarbeitenden unterstützt. Sie verursachen überwiegend einen geringen (Kosten-)Aufwand (Zeit, Geld,..) bei der Umsetzung. Wir empfehlen diese sofort umzusetzen. 
-- Sehr umstritten: Diese Massnahmen sind sehr umstritten jedoch hochwirksam. Wir empfehlen diese Massnahmen für den Moment zurückzustellen mit Ausnahme der Massnahme, die sich für die Reduktion der Langstreckenflüge einsetzt. Diese Massnahme hat die grösste Wirkung und keine andere Massnahme wirkt sich direkt auf Langstreckenflüge aus. 
+- Hohe Zustimmung: Diese Massnahmen werden von einer breiten Mehrheit der Eawag-Mitarbeitenden unterstützt. Sie verursachen überwiegend einen geringen (Kosten-)Aufwand (Zeit, Geld,..) bei der Umsetzung. Wir empfehlen, diese sofort umzusetzen. 
+- Sehr umstritten, hoch wirksam: Diese Massnahmen sind sehr umstritten jedoch hochwirksam. Wir empfehlen diese Massnahmen für den Moment zurückzustellen, mit Ausnahme der Massnahme, die sich für die Reduktion der Langstreckenflüge einsetzt. Diese Massnahme hat die grösste Wirkung und keine andere Massnahme wirkt sich direkt auf Langstreckenflüge aus. 
 - Umstritten, mittlere Wirksamkeit: Leicht umstrittene, mittelwirksame Massnahmen. Wir empfehlen die Umsetzung dieser Massnahmen.
 - Umstritten, geringe Wirksamkeit. Leicht umstrittene Massnahmen mit relativ geringerer Wirksamkeit. Wir empfehlen diese Massnahmen für den Moment zurückzustellen, mit der Ausnahme, das bestehende Reporting der Eawag hinsichtlich des Mobilitätsverhaltens zu erweitern, da es die Grundlage für weitere Massnahmen bildet. 
 
@@ -172,15 +172,15 @@ ggplot(internal_assessment, aes(x = acceptance, y = impact, color = group)) +
 
 ### Vollständiger vorgeschlagener Massnahmenkatalog
 
-Der vollständige Massnahmenkatalog, welcher den Eawag-Mitarbeitenden zur Beurteilung innerhalb der FlyAware-Umfrage vorgeschlagen wurde, kann hier heruntergeladen werden. Dieser Katalog wurde zuerst innerhalb des Kernteams und anschliessend innerhalb der erweiterten FlyAware-Gruppe ausgearbeitet. Dazu wurden auch Initiativen anderer Institutionen, wie z.B. der ETH und der EPFL, berücksichtigt. Wir haben versucht, eine Kombination aus regulatorischen, anreizstiftenden sowie informativen Massnahmen zusammenzustellen.
+Der vollständige Massnahmenkatalog, welcher den Eawag-Mitarbeitenden zur Beurteilung innerhalb der FlyAware-Umfrage vorgeschlagen wurde, kann <a href="static/complete_list_measures.pdf">hier heruntergeladen</a> werden. Dieser Katalog wurde zuerst innerhalb des Kernteams und anschliessend innerhalb der erweiterten FlyAware-Gruppe ausgearbeitet. Dazu wurden auch Initiativen anderer Institutionen, wie z.B. der ETH und der EPFL, berücksichtigt. Wir haben versucht, eine Kombination aus regulatorischen, anreizstiftenden sowie informationalen Massnahmen zusammenzustellen.
 
 ## Mitglieder des Kernteams FlyAware
 
 - Mario Angst, Eawag ESS
-- Andri Fritz, Université de Neuchâtel
+- Andri Fritz, Université de Neuchâtel (vorher ESS)
 - Jonas Heiberg, Eawag ESS
 - Karin Kiefer, Eawag UCHEM
-- Andrea Rösch, Agroscope
+- Andrea Rösch, Agroscope (vorher UCHEM)
 - Philipp Staudacher, Eawag UCHEM
 
 
