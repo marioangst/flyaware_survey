@@ -1,6 +1,7 @@
 # flyaware_survey
 
-Data and scripts needed to replicate analysis of survey responses to proposed flight reduction measures at Eawag.
+- Data and scripts needed to replicate analysis of survey responses to proposed flight reduction measures at Eawag.
+- Repository of static files (generated through RMarkdown) as backend to homepage hosting report to the Eawag directorate (www.flyaware.ch)
 
 A shiny web application to interactively explore the data is available at: https://marioangst.shinyapps.io/flyaware_survey/
 
@@ -14,6 +15,8 @@ A shiny web application to interactively explore the data is available at: https
  - descriptives_app.R: shiny app to interactively explore data
 - cluster_respondents.R: Clustering of respondents based on patterns in answer profiles
 
+- index.Rmd/ index.html/ german_index.Rmd/ german_index.html: RMarkdown files to generate static html for homepage in german and english versions
+
 ### /Data
 
 - 20191017_Export_Results_FlyawareSurvey.csv: raw survey response data (IP addresses and timestamps removed)
@@ -24,3 +27,7 @@ A shiny web application to interactively explore the data is available at: https
 ### /Viz_outputs
 
 Folder containing visualization outputs
+
+### /static
+
+Static files for homepage downloads (pdfs)
