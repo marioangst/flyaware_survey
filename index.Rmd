@@ -28,7 +28,7 @@ This statement from the ‘Scientists for Future’^[https://www.scientists4futu
 
 One of the most effective ways for scientific institutions to reduce their climate impact is a drastic reduction of business flights. More than half of the greenhouse gas (GHG) emissions of Eawag's sister institution ETH Zurich are caused by business trips. Of those **93%** are due to business flights ^[https://ethz.ch/flugreisen]. Technical alternatives to substantially reduce GHG emissions of airplanes are not foreseeable for the near future. It is thus of immediate concern to reduce the number of flights.
 
-Eawag is a research institution recognized worldwide and therefore has the potential to act as a role model for other research institutes by taking on its institutional responsibility for further reducing CO2 emissions. The time to be a rolemodel is now - academia and the world in general is finally waking up to the climate impacts of flying ^[for a helpful FAQ and an original 2015 petition of academics worldwide see https://academicflyingblog.wordpress.com/]
+Eawag is a research institution recognized worldwide and therefore has the potential to act as a role model for other research institutes by taking on its institutional responsibility for further reducing CO2 emissions. The time to be a rolemodel is now - academia and the world in general is finally waking up to the climate impacts of flying ^[for a helpful FAQ and an original 2015 petition of academics worldwide see https://academicflyingblog.wordpress.com/].
 
 This report is a call to the Eawag leadership to act. We have developed nine concrete sets of measures to reduce Eawag’s CO2 emissions related to business flights. To aid in decision-making, we provide a list of ten highly accepted and highly impactful measures as priority targets for implementation in the following.
 
@@ -87,7 +87,7 @@ We suggest the following list of measures for Eawag to take right away^[The comp
 <details>
   <summary> <font size="5"> Compensate all flights </font> </summary>
   
-  All flights, independent of the funding source, are collected in the reporting database (see measure improved database). Hence, even flights paid for through external funding (e.g. invitations by other research institutes, universities etc.) - which haven’t previously been considered - will also be compensated.
+  All flights, independent of the funding source, are collected in the reporting database (see measure "Improved database"). Hence, even flights paid for through external funding (e.g. invitations by other research institutes, universities etc.) - which haven’t previously been considered - will also be compensated.
   
 </details> <p>
 
@@ -172,7 +172,7 @@ ggplot(internal_assessment, aes(x = acceptance, y = impact, color = group)) +
 
 ## Complete initially proposed list of measures
 
-The complete list of measures originally proposed to Eawag employees for evaluation in the survey conducted by FlyAware can be <a href="static/complete_list_measures.pdf">downloaded here</a>. It was elaborated based on gathering a crowd-sourced list of measures first within a core group and then within the extended flyaware group. To gather an initial set of measures, initiatives at other institutions, such as ETH and EPFL were taken into account. We tried to ensure a mix of regulatory, incentive-based and informational measures.
+The complete list of measures originally proposed to Eawag employees for evaluation in the survey conducted by FlyAware can be <a href="static/complete_list_measures.pdf">downloaded here</a>. It was elaborated based on gathering a crowd-sourced list of measures first within a core group and then within the extended FlyAware group. To gather an initial set of measures, initiatives at other institutions, such as ETH and EPFL were taken into account. We tried to ensure a mix of regulatory, incentive-based and informational measures.
 
 ## Members of the FlyAware core group
 

@@ -16,7 +16,7 @@ source("read_in_clean_data.R")
 source("utility_functions.R")
 ```
 
-<a href="index.html">English Version</a>
+<a href="index.html">English version</a>
 
 # Ein Aufruf zum Handeln
 
