@@ -177,7 +177,7 @@ Der vollständige Massnahmenkatalog, welcher den Eawag-Mitarbeitenden zur Beurte
 ## Mitglieder des Kernteams FlyAware
 
 - Mario Angst, Eawag ESS
-- Andri Brugg, Université de Neuchâtel (vorher ESS)
+- Andri Brugger, Université de Neuchâtel (vorher ESS)
 - Jonas Heiberg, Eawag ESS
 - Karin Kiefer, Eawag UCHEM
 - Andrea Rösch, Agroscope (vorher UCHEM)
